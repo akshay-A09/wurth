@@ -44,6 +44,7 @@ body {
     font-family: $fontBook;
     overflow-x: hidden;
     color: #0b0b0b;
+    overflow-x: hidden!important;
     line-height: normal;
 }
 
@@ -190,6 +191,7 @@ p {
 
 .btnSpace {
     padding: 30px 0;
+   
 }
 .btnSpaceEx{
     padding: 60px 0;
