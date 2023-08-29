@@ -16,7 +16,7 @@ function App() {
   return (
   <div className="App">
       
-      <Router basename={''}>
+      <Router basename={'https://www.agency09.co/staging/wurth/'}>
       <ScrollToTop />
         <Routes>
           <Route exact path='/' element={<Home />} />

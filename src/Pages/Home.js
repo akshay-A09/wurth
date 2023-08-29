@@ -3,6 +3,16 @@ import Header from '../Components/Header';
 import Footer from '../Components/Footer';
 import { Link } from 'react-router-dom';
 
+// AOS
+import Aos from 'aos'
+import 'aos/dist/aos.css'
+// AOS End
+
+// Gsap
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+// Gspa End
+
 // Slick
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css'
@@ -30,6 +40,76 @@ import demo3 from '../Assets/Images/news/demo3.jpg';
 // site images end
 
 const Home = () => {
+
+
+
+
+// GSPA
+useEffect(() => {
+
+Aos.init({duration: 400});
+
+
+    gsap.registerPlugin(ScrollTrigger);
+
+
+    const hmAboutG = gsap.timeline({
+      duration: 3,
+      scrollTrigger: {
+        trigger: ".hmAbout",
+        toggleActions: "play none none none",
+        start: "top 100%",
+        end: "+=40%",
+        scrub: true,
+      },
+    });
+    hmAboutG.to(".hmAbout .smHeading,.hmAbout .sizeH2,.hmAbout p,.hmAbout ul", { top: "0" });
+
+
+
+    const carHausG = gsap.timeline({
+      duration: 3,
+      scrollTrigger: {
+        trigger: ".carHaus",
+        toggleActions: "play none none none",
+        start: "top 100%",
+        end: "+=40%",
+        scrub: true,
+      },
+    });
+    carHausG.to(".carHaus img ", { left: "0" })
+
+    const hmServicesG = gsap.timeline({
+      duration: 3,
+      scrollTrigger: {
+        trigger: ".hmServices",
+        toggleActions: "play none none none",
+        start: "top 110%",
+        end: "+=50%",
+        scrub: true,
+
+      },
+    });
+    hmServicesG.to(".hmServices", { background: "#0b0b0b" })
+    .to(".carHausAfter ", { scale: "1", borderRadius: 0, height: "300%", width: "100%" });
+
+
+    const clickBoxG = gsap.timeline({
+      duration: 3,
+      scrollTrigger: {
+        trigger: ".clickBox",
+        toggleActions: "play none none none",
+        start: "top 90%",
+        end: "+=50%",
+        scrub: true,
+      },
+    });
+    clickBoxG.to(".clickBox ", { clipPath: "inset(0 0 0% 0)" });
+
+    
+
+  }, []);
+// GSPA End
 
 
 // SEO Tag
@@ -198,6 +278,12 @@ const Home = () => {
 
 
   // Data for the Latest  Updates Tabs End
+ 
+
+ 
+
+
+
 
   return (
     <>
@@ -292,8 +378,8 @@ const Home = () => {
 
 
           <div className='hmAboutMin'>
-            <h3 className='sizeH2'>Welcome to <span className='red tu'>Würth CAR<span className='fontBook'>-Haus</span></span> </h3>
-            <p>At <span className='tu fontBold'>Würth CAR<span className='fontBook'>-Haus</span></span>, we are dedicated to elevating your car care experience. With a passion for perfection and a commitment to excellence, we offer a comprehensive range of premium services designed to bring out the best in your vehicle. Welcome to a world where automotive luxury meets unrivaled expertise.</p>
+            <h3 className='sizeH2'>Welcome to <span className='wp red tu'>Würth CAR<span className='fontBook'>-Haus</span></span> </h3>
+            <p>At <span className='tu fontBold wp'>Würth CAR<span className='fontBook'>-Haus</span></span>, we are dedicated to elevating your car care experience. With a passion for perfection and a commitment to excellence, we offer a comprehensive range of premium services designed to bring out the best in your vehicle. Welcome to a world where automotive luxury meets unrivaled expertise.</p>
 
             <div className='hmAboutMinList'>
               {/* About Count List  */}
@@ -321,6 +407,7 @@ const Home = () => {
       </section>
 
       <section className='carHaus'>
+        <div className='carHausAfter'></div>
         <img src={carhaus} />
       </section>
 
@@ -329,18 +416,18 @@ const Home = () => {
 
           <div className='TsectHd'>
 
-            <div className='TsectHdL'>
+            <div className='TsectHdL' data-aos="fade-up">
               <h4 className='smHeading tu red afLine afLineCW sizeH6'>Services</h4>
             </div>
 
-            <div className='TsectHdR'>
+            <div className='TsectHdR' data-aos="fade-up">
               <h3 className='sizeH3'>Experience Premium Care with  <span className='red'>Our Services</span></h3>
               <p>From meticulous detailing to advanced paint protection solutions, we have tailored our services to meet your car's unique needs</p>
             </div>
 
           </div>
 
-          <div className='servicesSlider'>
+          <div className='servicesSlider' data-aos="fade-up">
             <Slider {...servicesSlider} className="servicesSlider-slick slick-slider">
 
               {servicesData.map((service, index) => (
@@ -364,7 +451,7 @@ const Home = () => {
 
             </Slider>
 
-            <div className='center btnSpace'>
+            <div className='center btnSpace' data-aos="fade-up">
               <Link to='/services' className='btnS1 sizeH5 white fontBold'><FaArrowRight/> View All Services</Link>
             </div>
 
@@ -375,7 +462,7 @@ const Home = () => {
 
       <section className='clickBox'> <div className='container'>
 
-        <div className='clickBoxCol white'>
+        <div className='clickBoxCol white' data-aos="fade-up">
           <h4 className='sizeH3'>Elevate Your Car Care Experience Today!</h4>
           <p>Ready to experience the difference with<br />
             <span className='tu fontBold'>Würth CAR<span className='fontBook'>-Haus</span></span>? Book an appointment or contact our nearest location to get started.</p>
@@ -391,11 +478,11 @@ const Home = () => {
 
 
 
-      <section className='latestUpdatesHm'><div className='container'>
-        <h4 className='smHeading tu red afLine sizeH6'>Latest  Updates </h4>
+      <section className='latestUpdatesHm' ><div className='container' >
+        <h4 className='smHeading tu red afLine sizeH6' data-aos="fade-up">Latest  Updates </h4>
 
 
-        <div className='latestUpdatesHmTab'>
+        <div className='latestUpdatesHmTab' data-aos="fade-up">
           <Tabs>
             <TabList>
               <Tab><FaArrowRight /> News</Tab>
