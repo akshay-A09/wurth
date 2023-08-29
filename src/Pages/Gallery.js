@@ -5,9 +5,15 @@ import { Link } from 'react-router-dom';
 import Fancybox from "../Components/Fancybox";
 
 
+
 // Icons
 import { FaArrowRight } from 'react-icons/fa';
 // Icons End
+
+// AOS
+import Aos from 'aos'
+import 'aos/dist/aos.css'
+// AOS End
 
 // Slick
 import Slider from 'react-slick';
@@ -32,6 +38,14 @@ const Gallery = () => {
     }
   }, []);
 // SEO Tags End
+
+  
+  // GSPA
+  useEffect(() => {
+    Aos.init({duration: 400});
+  }, []);
+  // GSPA End
+
 
   // Transformation Pictures Slider
   const TransformationPicturesSlider = {
@@ -197,8 +211,9 @@ const customerJourneyData = [
 
     <section className='TransformationPicture'>
         <div className='container'>
-        <h3 className='sizeH2'><span className='red'>Transformation</span>  in Pictures </h3>
+        <h3 className='sizeH2' data-aos="fade-up"><span className='red'>Transformation</span>  in Pictures </h3>
 
+      <div data-aos="fade-up">
         <Slider {...TransformationPicturesSlider} className="TransformationPicturesSlider-slick slick-slider">
 
         {TransformationPicturesData.map((item, index) => (
@@ -208,7 +223,7 @@ const customerJourneyData = [
         ))}
 
         </Slider>
-
+        </div>
         </div>
       </section>
 
@@ -217,17 +232,17 @@ const customerJourneyData = [
 
           <div className='TsectHd'>
 
-            <div className='TsectHdL'>
+            <div className='TsectHdL' data-aos="fade-up">
               <h4 className='smHeading tu red afLine afLineCW sizeH6'>Services</h4>
             </div>
 
-            <div className='TsectHdR'>
+            <div className='TsectHdR' data-aos="fade-up">
               <h3 className='sizeH3'> <span className='red'>Discover Our Expertise: </span> <br/>Services in Action</h3>
             </div>
 
           </div>
 
-          <div className='servicesSlider servicesSliderS2'>
+          <div className='servicesSlider servicesSliderS2' data-aos="fade-up">
             <Slider {...servicesSlider} className="servicesSlider-slick slick-slider">
 
               {servicesData.map((service, index) => (
@@ -251,7 +266,7 @@ const customerJourneyData = [
 
             </Slider>
 
-            <div className='btnLeft btnSpaceEx'>
+            <div className='btnLeft btnSpaceEx' data-aos="fade-up">
               <Link to='/services' className='btnS1 sizeH5 red fontBold'><FaArrowRight/> View All Services</Link>
             </div>
 
@@ -264,8 +279,8 @@ const customerJourneyData = [
     <section className='customerJourney'>
         <div className='container'>
 
-    <h3 className='sizeH3'> <span className='red'>Customer Journey:  </span> <br/>Watch and Experience</h3>
-
+    <h3 className='sizeH3' data-aos="fade-up"> <span className='red'>Customer Journey:  </span> <br/>Watch and Experience</h3>
+       <div data-aos="fade-up">         
     <Fancybox options={{Carousel: {infinite: false,},}}>    
     <Slider {...customerJourneySlider} className="slick-slider customerJourneySlider">
     {customerJourneyData.map((item, index) => (
@@ -275,6 +290,7 @@ const customerJourneyData = [
         ))}
     </Slider>
     </Fancybox>
+    </div>
 
     </div>
     </section>

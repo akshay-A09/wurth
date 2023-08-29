@@ -8,7 +8,7 @@ const Footer = () => {
     <>
       <footer>
         <div className='ftSocial center'><div className='container'>
-          <h2 className='sizeH3 tu'><span className='tu fontBold red'>Würth Car<span className='fontBook'>-Haus</span></span> on social</h2>
+          <h2 className='sizeH3 tu'><span className='tu fontBold red wp'>Würth Car<span className='fontBook'>-Haus</span></span> on social</h2>
           <ul>
           <li><Link to='/'><i><FaFacebookF /></i> Facebook</Link></li>
           <li><Link to='/'><i><FaInstagram /></i> Instagram</Link></li>
@@ -78,9 +78,9 @@ const Footer = () => {
         <h4>Business Hours: Mon - Fri 10.30 am - 7pm</h4>
             <p>Wuerth India Pvt. Ltd. 703/704, Sahar Windfall, Sahar Plaza Complex, Andheri – Kurla Road, J B Nagar, Andheri (East), Mumbai, Maharashtra – 400059</p>
             
-            <h4><Link to="tellto:+912267377600" target='_blank' className='IconFaLink'><FaPhoneAlt/> +91 22 6737 7600</Link><span className='line'>|</span><Link to="mailto:info.wuerth@wuerth.in" target='_blank' className='IconFaLink'><FaEnvelope/> info.wuerth@wuerth.in</Link></h4>
+            <h4 className='fLinkC'><Link to="tel:+912267377600" target='_blank' className='IconFaLink wp'><FaPhoneAlt/> +91 22 6737 7600</Link><span className='line'>|</span><Link to="mailto:info.wuerth@wuerth.in" target='_blank' className='IconFaLink wp'><FaEnvelope/> info.wuerth@wuerth.in</Link></h4>
             
-            <h4><Link to="tellto:18001025061" target='_blank' className='IconFaLink'>Toll Free Number: 18001025061</Link></h4>
+            <h4 className='fLinkC'> <Link to="tel:18001025061" target='_blank' className='IconFaLink wp'>Toll Free Number: 18001025061</Link></h4>
 
         </div>
 

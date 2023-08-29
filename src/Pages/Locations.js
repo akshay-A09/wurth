@@ -8,6 +8,11 @@ import map from '../Assets/Images/map.jpg'
 import { FaArrowRight } from 'react-icons/fa';
 // Images End
 
+// AOS
+import Aos from 'aos'
+import 'aos/dist/aos.css'
+// AOS End
+
 const Locations = () => {
         
   // SEO Tags
@@ -19,6 +24,14 @@ const Locations = () => {
     }
   }, []);
   // SEO Tags End
+
+      
+  // GSPA
+  useEffect(() => {
+  Aos.init({duration: 400});
+  }, []);
+  // GSPA End
+
 
   // Locations
   const LocationsData = [
@@ -102,10 +115,10 @@ const Locations = () => {
     <section className='aboutData'>
         <div className='container'>
             <div className='aboutDataRow'>
-            <div className='aboutDataCol'>
+            <div className='aboutDataCol' data-aos="fade-up">
               <h3 className='sizeH2'><span className='red'>Explore <br/>Our Showrooms</span> <br/>Across India </h3>
             </div>
-            <div className='aboutDataCol'>
+            <div className='aboutDataCol' data-aos="fade-up">
               <p>At <span className="red tu bold">Würth CAR<span className="fontBook">-Haus</span></span>, we're here to provide exceptional car care across India. <br/>Explore our showrooms, find the nearest location, and experience automotive luxury like never before. </p>
             </div>
 
@@ -132,6 +145,7 @@ const Locations = () => {
                 )}
                 {searchResults.length > 0 && (
                   <div className='search-results'>
+                    <div className='search-resultsIn'>
                     {searchResults.map((result, index) => (
                       <Link
                         key={index}
@@ -148,7 +162,9 @@ const Locations = () => {
                       </Link>
                     ))}
                   </div>
+                  </div>
                 )}
+             
               </div>
             </div>
             <div className='LocationMapCont'>
@@ -169,7 +185,7 @@ const Locations = () => {
       </section>
 
 
-      <section className='checkoutSvr center'>
+      <section className='checkoutSvr center' data-aos="fade-up">
         <div className='container'>
             <Link to='/services' className='btnS1 sizeH4 black'><FaArrowRight/> Check out our Services</Link>
         </div>

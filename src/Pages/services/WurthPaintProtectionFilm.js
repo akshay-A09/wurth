@@ -8,6 +8,16 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css'
 // Slick
 
+// AOS
+import Aos from 'aos'
+import 'aos/dist/aos.css'
+// AOS End
+
+// Gsap
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+// Gspa End
+
 // Images
 import PPF from '../../Assets/Images/topBanners/ppf.jpg'
 import BuilttoLast from '../../Assets/Images/services/BuilttoLast.png'
@@ -29,7 +39,29 @@ const WurthPaintProtectionFilm = () => {
   }, []);
   // SEO Tags End
 
- 
+  // GSPA
+  useEffect(() => {
+    Aos.init({duration: 400});
+    gsap.registerPlugin(ScrollTrigger);
+
+    
+    const clickBoxG = gsap.timeline({
+      duration: 3,
+      scrollTrigger: {
+        trigger: ".clickBox2",
+        toggleActions: "play none none none",
+        start: "top 90%",
+        end: "+=30%",
+        scrub: true,
+      },
+    });
+    clickBoxG.to(".clickBox2 ", { clipPath: "inset(0 0 0% 0)" });
+
+    
+  }, []);
+  // GSPA End
+
+
   // About Count List 
   const ppfItemsData = [
     { 
@@ -160,8 +192,8 @@ Protection Film</h1>
 
         <section className='aboutData'>
         <div className='container'>
-            <div className='aboutDataRow'>
-            <div className='aboutDataCol'>
+            <div className='aboutDataRow' data-aos="fade-up">
+            <div className='aboutDataCol' data-aos="fade-up">
               <h3 className='sizeH2 red '><span className="tu">Würth Paint</span><br/> Protection Film</h3>
             </div>
             <div className='aboutDataCol'>
@@ -174,7 +206,7 @@ Protection Film</h1>
 
 
       
-    <section className='aboutDataList aboutDataListS2'>
+    <section className='aboutDataList aboutDataListS2' data-aos="fade-up">
       <div className='container'>
       <ul>
       
@@ -207,9 +239,9 @@ Protection Film</h1>
 
     <section className='svList'> <div className='container'>
 
-            <h3 className='sizeH3'>Shielding Vulnerable Areas from Damage</h3>
+            <h3 className='sizeH3' data-aos="fade-up">Shielding Vulnerable Areas from Damage</h3>
 
-            <ul className='svListCol'>
+            <ul className='svListCol' data-aos="fade-up">
             {svListData.map((item, index) => (
               <li>{item.text}</li>
             ))}
@@ -225,11 +257,11 @@ Protection Film</h1>
         <div className='container'>
         
         <div className='cAdvBox'>
-        <h3 className='sizeH3 center'>Advantages of choosing Würth PPF</h3>
+        <h3 className='sizeH3 center' data-aos="fade-up">Advantages of choosing Würth PPF</h3>
         </div>
 
 
-            <div className='customersReviewsAbout'>
+            <div className='customersReviewsAbout' data-aos="fade-up">
             <Slider {...customersAdvantagesSlider} className="customersReviewsAbout-slick slick-slider">
 
             {customersAdvantagesData.map((item, index) => (
@@ -252,13 +284,13 @@ Protection Film</h1>
         <div className='container'>
         
         <div className='cAdvBox'>
-        <h3 className='sizeH3'>Choose Your Shield</h3>
+        <h3 className='sizeH3' data-aos="fade-up">Choose Your Shield</h3>
         </div>
 
 
-        <div className='ChooseYourShieldRow'>
+        <div className='ChooseYourShieldRow' >
         {ChooseYourShieldData.map((item, index) => (
-          <div className='ChooseYourShieldCol' key={index}>
+          <div className='ChooseYourShieldCol' key={index} data-aos="fade-up">
           <Link to={item.link}>
             <h3>{item.title}</h3>
             <p>{item.description}</p>
@@ -275,7 +307,7 @@ Protection Film</h1>
       </section>
 
 
-<section className='checkoutSvr center'>
+<section className='checkoutSvr center' data-aos="fade-up">
   <div className='container'>
     <Link to='/services' className='btnS1 sizeH4 black'><FaArrowRight/> Check out our Services</Link>
   </div>

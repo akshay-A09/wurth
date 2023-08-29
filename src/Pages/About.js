@@ -3,6 +3,15 @@ import Header from '../Components/Header'
 import Footer from '../Components/Footer'
 import { Link } from 'react-router-dom';
 
+// AOS
+import Aos from 'aos'
+import 'aos/dist/aos.css'
+// AOS End
+
+// Gsap
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+// Gspa End
 
 // Images
 import about from '../Assets/Images/topBanners/about.jpg'
@@ -24,6 +33,44 @@ const About = () => {
 
 
 
+  
+// GSPA
+useEffect(() => {
+  Aos.init({duration: 400});
+  gsap.registerPlugin(ScrollTrigger);
+
+  const aboutMVG = gsap.timeline({
+    duration: 3,
+    scrollTrigger: {
+      trigger: ".aboutMV",
+      toggleActions: "play none none none",
+      start: "top 90%",
+      end: "+=50%",
+      scrub: true,
+    },
+  });
+  aboutMVG.to(".aboutMV ", { clipPath: "inset(0 0 0% 0)" });
+
+  
+  const aboutBgWurthG = gsap.timeline({
+    duration: 3,
+    scrollTrigger: {
+      trigger: ".aboutBgWurth",
+      toggleActions: "play none none none",
+      start: "top 90%",
+      end: "+=50%",
+      scrub: true,
+    },
+  });
+  aboutBgWurthG.to(".aboutBgWurth ", { clipPath: "inset(0 0 0% 0)" });
+
+
+
+
+
+
+}, []);
+// GSPA End
   
   // About Count List 
   const listItemsData = [
@@ -74,11 +121,10 @@ const About = () => {
     <section className='aboutData'>
       <div className='container'>
           <div className='aboutDataRow'>
-          <div className='aboutDataCol textRight'>
+          <div className='aboutDataCol' data-aos="fade-up">
             <h3 className='sizeH2'><span className="red tu">Würth CAR<span className="fontBook">-Haus</span></span></h3>
-            <h2 className='sizeH1 tu'>About Us</h2>
           </div>
-          <div className='aboutDataCol'>
+          <div className='aboutDataCol' data-aos="fade-up">
 
             <p><b>Carhaus is a premium brand that specializes in providing top-notch car care services,</b> catering to car enthusiasts and owners who value the appearance and maintenance of their vehicles. With a passion for automotive excellence, Carhaus offers a comprehensive range of services that includes car detailing, car wash, paint protection film (PPF), ceramic coating, and more.</p>
 
@@ -93,10 +139,10 @@ const About = () => {
 
     <section className='aboutDataList'>
       <div className='container'>
-      <ul>
+      <ul data-aos="fade-up">
         {listItemsData.map((item, index) => (
           <li key={index}>
-            <h3 className='sizeH1 red'>{item.count}</h3>
+            <h3 className='sizeH3 red'>{item.count}</h3>
             <p className='fontBold'>{item.text}</p>
           </li>
         ))}
@@ -121,10 +167,10 @@ const About = () => {
 
     <section className='aboutDataS2'>
       <div className='container'>
-          <div className='aboutDataS2Col'>
+          <div className='aboutDataS2Col' data-aos="fade-up">
             <h3 className='sizeH3'><span className="red">Social & Environmental</span><br/>Responsibility</h3>
           </div>
-          <div className='aboutDataS2Col'>
+          <div className='aboutDataS2Col' data-aos="fade-up">
           <h3 className='sizeH4'>Sustainability Holds our World Together</h3>
             <p>We are striving for climate neutrality by using renewable energy sources, establishing closed life cycles for commodities and materials along complex supply chains, and endorsing fair cooperation within our global supply chain.</p>
           </div>
@@ -133,7 +179,7 @@ const About = () => {
 
 
 
-    <section className='center'>
+    <section className='center' data-aos="fade-up">
       <div className='container'>
         <Link className="btnS1 sizeH4 black" to="/"><FaArrowRight/> Read The Würth Group’s Sustainability Report</Link>
       </div>
@@ -149,9 +195,9 @@ const About = () => {
       <div className='container'>
           <div className='aboutDataRow'>
           <div className='aboutDataCol'>
-            <h3 className='sizeH2'><span className="red tu">Würth<span className="fontBook black"> Group</span></span></h3>
+            <h3 className='sizeH2' data-aos="fade-up"><span className="red tu">Würth<span className="fontBook black"> Group</span></span></h3>
           </div>
-          <div className='aboutDataCol'>
+          <div className='aboutDataCol' data-aos="fade-up">
 
             <p>Every big story has its beginning. That of the Würth Group began in 1945 in Künzelsau, a small German town in the region of Hohenlohe. Over many decades, the screw wholesaler has developed into the world’s largest company for assembly and fastening technology and into a patron of art and culture.</p>
 
@@ -166,10 +212,10 @@ const About = () => {
 
     <section className='aboutDataList'>
       <div className='container'>
-      <ul>
+      <ul data-aos="fade-up">
         {listItemsDataOperates .map((item, index) => (
           <li key={index}>
-            <h3 className='sizeH1 red'>{item.count}</h3>
+            <h3 className='sizeH3 red'>{item.count}</h3>
             <p className='fontBold'>{item.text}</p>
           </li>
         ))}
@@ -178,7 +224,7 @@ const About = () => {
     </section>
 
 
-    <section className='center pT'>
+    <section className='center pT' data-aos="fade-up">
       <div className='container'>
         <Link className="btnS1 sizeH4 black" to="/"><FaArrowRight/> Know more about <b className='tu'>Würth</b></Link>
       </div>

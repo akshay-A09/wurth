@@ -8,7 +8,15 @@ import { FaArrowRight, FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from 'react-icon
 import contactUs from '../Assets/Images/topBanners/contactUs.jpg'
 // Images
 
+// AOS
+import Aos from 'aos'
+import 'aos/dist/aos.css'
+// AOS End
 
+// Gsap
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+// Gspa End
 
 const ContactUs = () => {
     
@@ -21,6 +29,28 @@ const ContactUs = () => {
     }
   }, []);
   // SEO Tags End
+
+    
+// GSPA
+useEffect(() => {
+  Aos.init({duration: 400});
+  gsap.registerPlugin(ScrollTrigger);
+
+  const clickBoxContactG = gsap.timeline({
+    duration: 3,
+    scrollTrigger: {
+      trigger: ".clickBoxContact",
+      toggleActions: "play none none none",
+      start: "top 90%",
+      end: "+=50%",
+      scrub: true,
+    },
+  });
+  clickBoxContactG.to(".clickBoxContact .container ", { clipPath: "inset(0 0 0% 0)" });
+
+
+}, []);
+// GSPA End
 
 
   return (
@@ -53,10 +83,10 @@ const ContactUs = () => {
         <section className='aboutData'>
         <div className='container'>
             <div className='aboutDataRow'>
-            <div className='aboutDataCol'>
+            <div className='aboutDataCol' data-aos="fade-up">
               <Link to='/locations' className='IconFaLink sizeH5 bold'><FaMapMarkerAlt/> <span>View Location</span></Link>
             </div>
-            <div className='aboutDataCol locData'>
+            <div className='aboutDataCol locData' data-aos="fade-up">
             <h4>Business Hours: Mon - Fri 10.30 am - 7pm</h4>
             <p>Wuerth India Pvt. Ltd. 703/704, Sahar Windfall, Sahar Plaza Complex, Andheri – Kurla Road, J B Nagar, Andheri (East), Mumbai, Maharashtra – 400059</p>
             
@@ -94,7 +124,7 @@ of <span className='tu fontBold red'>Würth Car<span className='fontBook'>-Haus?
 
 
 
-      <section className='checkoutSvr center'>
+      <section className='checkoutSvr center' data-aos="fade-up">
         <div className='container'>
             <Link to='/services' className='btnS1 sizeH4 black'><FaArrowRight/> Check out our Services</Link>
         </div>

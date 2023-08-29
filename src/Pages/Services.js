@@ -8,6 +8,11 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css'
 // Slick
 
+// AOS
+import Aos from 'aos'
+import 'aos/dist/aos.css'
+// AOS End
+
 // Images
 import services from '../Assets/Images/topBanners/services.jpg'
 import carDetailing from '../Assets/Images/services/car-detailing.jpg'
@@ -30,6 +35,12 @@ const Services = () => {
     }
   }, []);
   // SEO Tags End
+
+  // AOS
+  useEffect(() => {
+    Aos.init({duration: 400});
+  }, []);
+  // AOS END
 
   // Data for the services 
   const servicesDataList = [
@@ -101,7 +112,7 @@ const Services = () => {
     dots: false,
     arrows: true,
     infinite: false,
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 7000,
     speed: 700,
     slidesToShow: 4,
@@ -176,10 +187,10 @@ const Services = () => {
       <section className='aboutData'>
         <div className='container'>
             <div className='aboutDataRow'>
-            <div className='aboutDataCol'>
-              <h3 className='sizeH2'>Experience Premium Car Care Services at <br/><span className="red tu">Würth CAR<span className="fontBook">-Haus</span></span></h3>
+            <div className='aboutDataCol' data-aos="fade-up">
+              <h3 className='sizeH2'>Experience Premium Car Care Services at <br/><span className="red tu wp">Würth CAR<span className="fontBook">-Haus</span></span></h3>
             </div>
-            <div className='aboutDataCol'>
+            <div className='aboutDataCol' data-aos="fade-up">
               <p><b>Our comprehensive range of premium services is designed to bring out the best in your vehicle, ensuring it stays in pristine condition inside and out.</b> </p>
             </div>
 
@@ -194,7 +205,7 @@ const Services = () => {
           <div className='itemListRow'>
 
           {servicesDataList.map((service, index) => (
-          <div className='itemListCol' key={index}>
+          <div className='itemListCol' key={index} data-aos="zoom-in">
             <Link to={service.link} className='white'>
               <div className='itemListColBg'>
                 <img src={service.image} alt={service.title} />
@@ -215,11 +226,11 @@ const Services = () => {
   <section className='aboutData lightgreyB'>
         <div className='container'>
             <div className='aboutDataRow'>
-            <div className='aboutDataCol'>
-              <h3 className='sizeH2'><span className="red tu">Why Ch oose</span>
+            <div className='aboutDataCol' data-aos="fade-up">
+              <h3 className='sizeH2'><span className="red tu">Why Choose</span>
 <br/><span className=" tu">Car<span className="fontBook">-Haus</span></span></h3>
             </div>
-            <div className='aboutDataCol'>
+            <div className='aboutDataCol' data-aos="fade-up">
               <h3 className='m'>Quality and Expertise</h3>
               <p>At Carhaus, car care is an art we're passionate about. With unwavering commitment, our skilled professionals strive for perfection in every service. Whether restoring your vehicle's shine or rejuvenating its interior, we approach each task with precision and care. Your cherished vehicle is in the hands of true car care experts who treat it like their own.</p>
 
@@ -239,16 +250,16 @@ const Services = () => {
       <section className='aboutData'>
         <div className='container'>
             <div className='aboutDataRow'>
-            <div className='aboutDataCol'>
+            <div className='aboutDataCol' data-aos="fade-up">
               <h3 className='sizeH2'>Customers <br/><span className="red">Reviews</span></h3>
             </div>
-            <div className='aboutDataCol'>
+            <div className='aboutDataCol' data-aos="fade-up">
               <p>Hear what customers have to say about their Carhaus experience</p>
             </div>
             </div>
 
 
-            <div className='customersReviewsAbout'>
+            <div className='customersReviewsAbout' data-aos="fade-up">
             <Slider {...customersReviewsAboutSlider} className="customersReviewsAbout-slick slick-slider">
 
             {customersReviewsData.map((item, index) => (
