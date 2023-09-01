@@ -15,11 +15,38 @@ import 'aos/dist/aos.css'
 
 // Images
 import services from '../Assets/Images/topBanners/services.jpg'
-import carDetailing from '../Assets/Images/services/car-detailing.jpg'
 import caWash from '../Assets/Images/services/car-wash.jpg'
 import exteriorEnrich from '../Assets/Images/services/exterior-enrich.jpg'
 import paintProtectionFilm2 from '../Assets/Images/services/paint-protection-film2.jpg'
 import uvShield from '../Assets/Images/services/uv-shield.jpg'
+
+// Services
+import PaintProtectionFilm from '../Assets/Images/services/images/PaintProtectionFilm.jpg';
+import EngineCoat from '../Assets/Images/services/images/EngineCoat.jpg';
+import AlloyWheelPolish from '../Assets/Images/services/images/AlloyWheelPolish.jpg';
+import RodentRepellent from '../Assets/Images/services/images/RodentRepellent.jpg';
+import ServicePlus from '../Assets/Images/services/images/ServicePlus.jpg';
+import EmblemCleaning from '../Assets/Images/services/images/EmblemCleaning.jpg';
+import Acoustics4DSD from '../Assets/Images/services/images/Acoustics4DSD.jpg';
+import CavityWaxProtection from '../Assets/Images/services/images/CavityWaxProtection.jpg';
+import SilencerCoating from '../Assets/Images/services/images/SilencerCoating.jpg';
+import carACEvaporator from '../Assets/Images/services/images/carACEvaporator.jpg';
+import ACVentCleaning from '../Assets/Images/services/images/ACVentCleaning.jpg';
+import WindshieldGlassPolish from '../Assets/Images/services/images/WindshieldGlassPolish.jpg';
+import HeadLightRestoration from '../Assets/Images/services/images/HeadLightRestoration.jpg';
+import UnderbodyRustOff from '../Assets/Images/services/images/UnderbodyRustOff.jpg';
+import WurthCeraMaxx from '../Assets/Images/services/images/WurthCeraMaxx.jpg';
+import WurthGlossSeal from '../Assets/Images/services/images/WurthGlossSeal.jpg';
+import PaintRevive from '../Assets/Images/services/images/PaintRevive.jpg';
+import ExteriorEnrich from '../Assets/Images/services/images/ExteriorEnrich.jpg';
+import uvShield2 from '../Assets/Images/services/images/uvShield.jpg';
+import BlueGreenWash from '../Assets/Images/services/images/BlueGreenWash.jpg';
+import InterioClassy from '../Assets/Images/services/images/Interio-Classy.jpg';
+
+
+
+// Services
+
 // Images End
 
 
@@ -46,63 +73,109 @@ const Services = () => {
   const servicesDataList = [
     {
       link: '/services/wurth-paint-protection-film',
-      image: paintProtectionFilm2,
-      title: 'Paint Protection Film (PPF)',
+      image: PaintProtectionFilm,
+      title: 'Paint Protection Film',
+    },
+    {
+      link: '/services/wurth-paint-protection-film',
+      image: BlueGreenWash,
+      title: 'Blue/Green Wash',
     },
     {
       link: '/',
-      image: uvShield,
+      image: uvShield2,
       title: 'UV Shield',
     },
     {
       link: '/',
-      image: exteriorEnrich,
+      image: ExteriorEnrich,
       title: 'Exterior Enrich',
     },
     {
       link: '/',
-      image: caWash,
-      title: 'Car Wash',
+      image: PaintRevive,
+      title: 'Paint Revive',
     },
     {
       link: '/',
-      image: paintProtectionFilm2,
-      title: 'Paint Protection Film (PPF)',
+      image: WurthGlossSeal,
+      title: 'Wurth Gloss Seal',
     },
     {
       link: '/',
-      image: uvShield,
-      title: 'UV Shield',
+      image: WurthCeraMaxx,
+      title: 'Wurth Cera-Maxx',
     },
     {
       link: '/',
-      image: exteriorEnrich,
-      title: 'Exterior Enrich',
+      image: InterioClassy,
+      title: 'Interio Classy/ZERO-b/ZERO-b Plus',
     },
     {
       link: '/',
-      image: caWash,
-      title: 'Car Wash',
+      image: UnderbodyRustOff,
+      title: 'Underbody Rust-Off (3/5 Years)',
     },{
       link: '/',
-      image: paintProtectionFilm2,
-      title: 'Paint Protection Film (PPF)',
+      image: WindshieldGlassPolish,
+      title: 'Windshield/Glass Polish (F/F&R)',
     },
     {
       link: '/',
-      image: uvShield,
-      title: 'UV Shield',
+      image: HeadLightRestoration,
+      title: 'HeadLight Restoration',
     },
     {
       link: '/',
-      image: exteriorEnrich,
-      title: 'Exterior Enrich',
+      image: ACVentCleaning,
+      title: 'AC Vent Cleaning (F/F&R)',
     },
     {
       link: '/',
-      image: caWash,
-      title: 'Car Wash',
+      image: carACEvaporator,
+      title: 'AC Evaporator Cleaning',
     },
+    {
+      link: '/',
+      image: SilencerCoating,
+      title: 'Silencer Coating',
+    },
+    {
+      link: '/',
+      image: CavityWaxProtection,
+      title: 'Cavity Wax Protection',
+    },
+    {
+      link: '/',
+      image: Acoustics4DSD,
+      title: 'Acoustics - 4 DSD',
+    },
+    {
+      link: '/',
+      image: EmblemCleaning,
+      title: 'Emblem Cleaning',
+    },
+    {
+      link: '/',
+      image: ServicePlus,
+      title: 'Service Plus',
+    },
+    {
+      link: '/',
+      image: RodentRepellent,
+      title: 'Rodent Repellent ',
+    },
+    {
+      link: '/',
+      image: AlloyWheelPolish,
+      title: 'Alloy Wheel Polish ',
+    },
+    {
+      link: '/',
+      image: EngineCoat,
+      title: 'Engine Coat',
+    },
+    
   ];
   // Data for the services  End
 

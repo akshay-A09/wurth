@@ -24,6 +24,7 @@ import BuilttoLast from '../../Assets/Images/services/BuilttoLast.png'
 import SelfHealingFilm from '../../Assets/Images/services/SelfHealingFilm.png'
 import TotalProtection from '../../Assets/Images/services/TotalProtection.png'
 import UnmatchedClarity from '../../Assets/Images/services/UnmatchedClarity.png'
+import chart from '../../Assets/Images/chart.jpg'
 // Images End
 
 
@@ -170,8 +171,7 @@ const WurthPaintProtectionFilm = () => {
             </div>
             <div className='topBannerText'>
                 <div className='container'>
-                    <h1 className='sizeH1 tu white'>Würth Paint<br />
-Protection Film</h1>
+                    <h1 className='sizeH1 tu white'>Wurth Paint <br/>Protection Film</h1>
                 </div>
             </div>
         </section>
@@ -197,7 +197,7 @@ Protection Film</h1>
               <h3 className='sizeH2 red '><span className="tu">Würth Paint</span><br/> Protection Film</h3>
             </div>
             <div className='aboutDataCol'>
-              <p><b>Automotive perfection meets unrivaled protection</b> </p>
+              <p><b>Wurth PPF is engineered using advanced technology to create a transparent, self-healing shield that adheres seamlessly to your car's surface.</b> </p>
             </div>
 
             </div>
@@ -289,15 +289,21 @@ Protection Film</h1>
 
 
         <div className='ChooseYourShieldRow' >
-        {ChooseYourShieldData.map((item, index) => (
+      
+      
+        {/* {ChooseYourShieldData.map((item, index) => (
           <div className='ChooseYourShieldCol' key={index} data-aos="fade-up">
           <Link to={item.link}>
             <h3>{item.title}</h3>
             <p>{item.description}</p>
           </Link>  
           </div>
-        ))} 
+        ))}  */}
   
+
+  <div className='chartSlide'>
+          <img src={chart}/>
+  </div>
           
         </div>  
 

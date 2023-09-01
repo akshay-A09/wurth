@@ -30,38 +30,29 @@ const Footer = () => {
 
           <div className='ftNavsR'>
           <h3 className='sizeH5 red tu'>Services</h3>
-          <ul>
-            <li><Link to='/services/wurth-paint-protection-film'>Paint Protection Film</Link></li>
-            <li><Link to='/'>Car Wash</Link></li>
-            <li><Link to='/'>Detailing</Link></li>
-            <li><Link to='/'>Ceramic Coating</Link></li>
-            <li><Link to='/'>Leather Conditioning</Link></li>
-            <li><Link to='/'>Fabric Protection</Link></li>
-            <li><Link to='/'>Wheel & Tire Care</Link></li>
-            <li><Link to='/'>Odor Elimination</Link></li>
-            <li><Link to='/'>Paint Correction</Link></li>
-
-            <li><Link to='/'>Paint Protection Film</Link></li>
-            <li><Link to='/'>Car Wash</Link></li>
-            <li><Link to='/'>Detailing</Link></li>
-            <li><Link to='/'>Ceramic Coating</Link></li>
-            <li><Link to='/'>Leather Conditioning</Link></li>
-            <li><Link to='/'>Fabric Protection</Link></li>
-            <li><Link to='/'>Wheel & Tire Care</Link></li>
-            <li><Link to='/'>Odor Elimination</Link></li>
-            <li><Link to='/'>Paint Correction</Link></li>
-
-            <li><Link to='/'>Paint Protection Film</Link></li>
-            <li><Link to='/'>Car Wash</Link></li>
-            <li><Link to='/'>Detailing</Link></li>
-            <li><Link to='/'>Ceramic Coating</Link></li>
-            <li><Link to='/'>Leather Conditioning</Link></li>
-            <li><Link to='/'>Fabric Protection</Link></li>
-            <li><Link to='/'>Wheel & Tire Care</Link></li>
-            <li><Link to='/'>Odor Elimination</Link></li>
-            <li><Link to='/'>Paint Correction</Link></li>
-
-          </ul>
+<ul>
+<li><Link to='/'>Blue/Green Wash </Link></li>
+<li><Link to='/'>UV Shield</Link></li>
+<li><Link to='/'>Exterior Enrich</Link></li>
+<li><Link to='/'>Paint Revive</Link></li>
+<li><Link to='/'>Wurth Gloss Seal </Link></li>
+<li><Link to='/'>Wurth Cera-Maxx</Link></li>
+<li><Link to='/'>Interio Classy/ZERO-b/ZERO-b Plus</Link></li>
+<li><Link to='/'>Underbody Rust-Off (3/5 Years)</Link></li>
+<li><Link to='/'>Windshield/Glass Polish (F/F&R)</Link></li>
+<li><Link to='/'>HeadLight Restoration</Link></li>
+<li><Link to='/'>AC Vent Cleaning (F/F&R)</Link></li>
+<li><Link to='/'>AC Evaporator Cleaning</Link></li>
+<li><Link to='/'>Silencer Coating</Link></li>
+<li><Link to='/'>Cavity Wax Protection</Link></li>
+<li><Link to='/'>Acoustics - 4 DSD</Link></li>
+<li><Link to='/'>Emblem Cleaning</Link></li>
+<li><Link to='/'>Service Plus</Link></li>
+<li><Link to='/'>Rodent Repellent </Link></li>
+<li><Link to='/'>Alloy Wheel Polish </Link></li>
+<li><Link to='/'>Engine Coat</Link></li>
+<li><Link to='/services/wurth-paint-protection-film'>Paint Protection Film</Link></li>
+</ul>
 
           </div>
 

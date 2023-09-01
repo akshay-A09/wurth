@@ -25,6 +25,15 @@ import gallery from '../Assets/Images/topBanners/gallery.jpg'
 import gallery1 from '../Assets/Images/gallery/gallery1.jpg'
 import demo from '../Assets/Images/demo.jpg'
 import PaintProtectionFilm from '../Assets/Images/services/paint-protection-film.jpg';
+
+
+
+import CarDetailing from '../Assets/Images/services/images/CarDetailing.jpg';
+import CarWash from '../Assets/Images/services/images/CarWash.jpg';
+import CeramicCoating from '../Assets/Images/services/images/CeramicCoating.jpg';
+import ExreriorProtection from '../Assets/Images/services/images/ExreriorProtection.jpg';
+import InteriorCare from '../Assets/Images/services/images/InteriorCare.jpg';
+import ppf from '../Assets/Images/services/images/ppf.jpg';
 // Images End
 const Gallery = () => {
     
@@ -101,32 +110,46 @@ const Gallery = () => {
   };
   // Services Slider end
 
+
   // Data for the services slider
   const servicesData = [
     {
       title: 'Paint Protection Film (PPF)',
-      image: PaintProtectionFilm,
+      image: ppf,
       description: "Shield your car's paint from road debris and scratches with our premium PPF solutions. Our high-quality films offer unparalleled protection while preserving your vehicle's appearance.",
       link: '/',
     },
     {
       title: 'Ceramic Coating',
-      image: PaintProtectionFilm,
+      image: CeramicCoating,
       description: "Experience unparalleled attention to detail with our comprehensive car detailing packages. Whether it's restoring your vehicle's shine or rejuvenating the interior, our experts will leave your car looking flawless.",
       link: '/',
-    },
-    {
-      title: 'Paint Protection Film (PPF)',
-      image: PaintProtectionFilm,
+    },  
+     {
+      title: 'Car Detailing',
+      image: CarDetailing,
       description: "Shield your car's paint from road debris and scratches with our premium PPF solutions. Our high-quality films offer unparalleled protection while preserving your vehicle's appearance.",
       link: '/',
     },
     {
-      title: 'Ceramic Coating',
-      image: PaintProtectionFilm,
+      title: 'Exrerior Protection',
+      image: ExreriorProtection,
       description: "Experience unparalleled attention to detail with our comprehensive car detailing packages. Whether it's restoring your vehicle's shine or rejuvenating the interior, our experts will leave your car looking flawless.",
       link: '/',
     },
+    {
+      title: 'Interior Care',
+      image: InteriorCare,
+      description: "Shield your car's paint from road debris and scratches with our premium PPF solutions. Our high-quality films offer unparalleled protection while preserving your vehicle's appearance.",
+      link: '/',
+    },
+    {
+      title: 'Car Wash',
+      image: CarWash,
+      description: "Experience unparalleled attention to detail with our comprehensive car detailing packages. Whether it's restoring your vehicle's shine or rejuvenating the interior, our experts will leave your car looking flawless.",
+      link: '/',
+    },  
+ 
 
   ];
   // Data for the services slider End

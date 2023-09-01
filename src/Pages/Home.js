@@ -31,12 +31,20 @@ import { FaArrowRight, FaMapMarkerAlt } from 'react-icons/fa';
 // site images
 import banner1 from '../Assets/Images/slider/banner1.png'
 import banner2 from '../Assets/Images/slider/banner2.png'
+import banner2Man from '../Assets/Images/slider/banner2Man.png'
+import banner1Man from '../Assets/Images/slider/banner1Man.png'
 import carhaus from '../Assets/Images/carhaus.png';
-import CarDetailing from '../Assets/Images/services/car-detailing.jpg';
 import PaintProtectionFilm from '../Assets/Images/services/paint-protection-film.jpg';
 import demo1 from '../Assets/Images/news/demo1.jpg';
 import demo2 from '../Assets/Images/news/demo2.jpg';
 import demo3 from '../Assets/Images/news/demo3.jpg';
+
+import CarDetailing from '../Assets/Images/services/images/CarDetailing.jpg';
+import CarWash from '../Assets/Images/services/images/CarWash.jpg';
+import CeramicCoating from '../Assets/Images/services/images/CeramicCoating.jpg';
+import ExreriorProtection from '../Assets/Images/services/images/ExreriorProtection.jpg';
+import InteriorCare from '../Assets/Images/services/images/InteriorCare.jpg';
+import ppf from '../Assets/Images/services/images/ppf.jpg';
 // site images end
 
 const Home = () => {
@@ -128,14 +136,14 @@ Aos.init({duration: 400});
     arrows: true,
     infinite: true,
     autoplay: true,
-    autoplaySpeed: 7000,
+    autoplaySpeed: 8000,
     speed: 700,
   };
   // Home Slider end
 
   // Services Slider
   const servicesSlider = {
-    dots: false,
+    dots: true,
     arrows: true,
     infinite: true,
     autoplay: true,
@@ -167,28 +175,41 @@ Aos.init({duration: 400});
   const servicesData = [
     {
       title: 'Paint Protection Film (PPF)',
-      image: PaintProtectionFilm,
+      image: ppf,
       description: "Shield your car's paint from road debris and scratches with our premium PPF solutions. Our high-quality films offer unparalleled protection while preserving your vehicle's appearance.",
       link: '/',
     },
     {
       title: 'Ceramic Coating',
-      image: PaintProtectionFilm,
+      image: CeramicCoating,
       description: "Experience unparalleled attention to detail with our comprehensive car detailing packages. Whether it's restoring your vehicle's shine or rejuvenating the interior, our experts will leave your car looking flawless.",
       link: '/',
-    },
-    {
-      title: 'Paint Protection Film (PPF)',
-      image: PaintProtectionFilm,
+    },  
+     {
+      title: 'Car Detailing',
+      image: CarDetailing,
       description: "Shield your car's paint from road debris and scratches with our premium PPF solutions. Our high-quality films offer unparalleled protection while preserving your vehicle's appearance.",
       link: '/',
     },
     {
-      title: 'Ceramic Coating',
-      image: PaintProtectionFilm,
+      title: 'Exrerior Protection',
+      image: ExreriorProtection,
       description: "Experience unparalleled attention to detail with our comprehensive car detailing packages. Whether it's restoring your vehicle's shine or rejuvenating the interior, our experts will leave your car looking flawless.",
       link: '/',
     },
+    {
+      title: 'Interior Care',
+      image: InteriorCare,
+      description: "Shield your car's paint from road debris and scratches with our premium PPF solutions. Our high-quality films offer unparalleled protection while preserving your vehicle's appearance.",
+      link: '/',
+    },
+    {
+      title: 'Car Wash',
+      image: CarWash,
+      description: "Experience unparalleled attention to detail with our comprehensive car detailing packages. Whether it's restoring your vehicle's shine or rejuvenating the interior, our experts will leave your car looking flawless.",
+      link: '/',
+    },  
+ 
 
   ];
   // Data for the services slider End
@@ -202,22 +223,22 @@ Aos.init({duration: 400});
         link: '/',
         date: '9 Sept 2023',
         image: demo1,
-        title: 'Lorem Ipsum is simply dummy',
-        description: "At <span className='tu fontBold'>Würth CAR<span className='fontBook'>-Haus</span></span>, we are dedicated to elevating your car care experience. ",
+        title: "<span className='tu fontBold red wp'>Würth Car<span className='fontBook'>-Haus</span></span> Zooms into India",
+        description: "With its own outlet in Salem",
       },
       {
         link: '/',
         date: '9 Sept 2023',
         image: demo2,
-        title: 'Lorem Ipsum is simply dummy',
+        title: "Car Detailing by <span className='tu fontBold red wp'>Würth Car<span className='fontBook'>-Haus</span></span>",
         description: "At <span className='tu fontBold'>Würth CAR<span className='fontBook'>-Haus</span></span>, we are dedicated to elevating your car care experience. ",
       },
       {
         link: '/',
         date: '9 Sept 2023',
         image: demo3,
-        title: 'Lorem Ipsum is simply dummy',
-        description: "At <span className='tu fontBold'>Würth CAR<span className='fontBook'>-Haus</span></span>, we are dedicated to elevating your car care experience. ",
+        title: "<span className='tu fontBold'>Würth CAR<span className='fontBook'>-Haus's</span></span> Salem Outlet is a Hit",
+        description: "Read more about what customers are saying",
       },
     ];
     // News End
@@ -228,23 +249,23 @@ Aos.init({duration: 400});
       {
         link: '/',
         date: '9 Sept 2023',
-        image: demo3,
-        title: 'Lorem Ipsum is simply dummy',
-        description: "At <span className='tu fontBold'>Würth CAR<span className='fontBook'>-Haus</span></span>, we are dedicated to elevating your car care experience. ",
-      },
-      {
-        link: '/',
-        date: '9 Sept 2023',
         image: demo1,
-        title: 'Lorem Ipsum is simply dummy',
-        description: "At <span className='tu fontBold'>Würth CAR<span className='fontBook'>-Haus</span></span>, we are dedicated to elevating your car care experience. ",
+        title: "<span className='tu fontBold red wp'>Würth Car<span className='fontBook'>-Haus</span></span> Zooms into India",
+        description: "With its own outlet in Salem",
       },
       {
         link: '/',
         date: '9 Sept 2023',
         image: demo2,
-        title: 'Lorem Ipsum is simply dummy',
+        title: "Car Detailing by <span className='tu fontBold red wp'>Würth Car<span className='fontBook'>-Haus</span></span>",
         description: "At <span className='tu fontBold'>Würth CAR<span className='fontBook'>-Haus</span></span>, we are dedicated to elevating your car care experience. ",
+      },
+      {
+        link: '/',
+        date: '9 Sept 2023',
+        image: demo3,
+        title: "<span className='tu fontBold'>Würth CAR<span className='fontBook'>-Haus's</span></span> Salem Outlet is a Hit",
+        description: "Read more about what customers are saying",
       },
     ];
     // Events End
@@ -255,23 +276,23 @@ Aos.init({duration: 400});
       {
         link: '/',
         date: '9 Sept 2023',
+        image: demo1,
+        title: "<span className='tu fontBold red wp'>Würth Car<span className='fontBook'>-Haus</span></span> Zooms into India",
+        description: "With its own outlet in Salem",
+      },
+      {
+        link: '/',
+        date: '9 Sept 2023',
         image: demo2,
-        title: 'Lorem Ipsum is simply dummy',
+        title: "Car Detailing by <span className='tu fontBold red wp'>Würth Car<span className='fontBook'>-Haus</span></span>",
         description: "At <span className='tu fontBold'>Würth CAR<span className='fontBook'>-Haus</span></span>, we are dedicated to elevating your car care experience. ",
       },
       {
         link: '/',
         date: '9 Sept 2023',
         image: demo3,
-        title: 'Lorem Ipsum is simply dummy',
-        description: "At <span className='tu fontBold'>Würth CAR<span className='fontBook'>-Haus</span></span>, we are dedicated to elevating your car care experience. ",
-      },
-      {
-        link: '/',
-        date: '9 Sept 2023',
-        image: demo1,
-        title: 'Lorem Ipsum is simply dummy',
-        description: "At <span className='tu fontBold'>Würth CAR<span className='fontBook'>-Haus</span></span>, we are dedicated to elevating your car care experience. ",
+        title: "<span className='tu fontBold'>Würth CAR<span className='fontBook'>-Haus's</span></span> Salem Outlet is a Hit",
+        description: "Read more about what customers are saying",
       },
     ];
     // Blogs End
@@ -304,16 +325,17 @@ Aos.init({duration: 400});
 
                 <div className='itemCover_img'>
                   <img src={banner1} />
+                  <img src={banner1Man} className='banner1Man'/>
                 </div>
 
                 <div className='itemCover_points'>
                   <ul>
-                    <li>Car<br /> Detailing</li>
-                    <li>Car<br /> Wash</li>
                     <li>Paint Protection<br /> Film (PPF)</li>
                     <li>Ceramic<br /> Coating</li>
+                    <li>Car<br /> Detailing</li>
+                    <li>Exterior<br/>Protection</li>
                     <li>Interior <br />Protection</li>
-                    <li><Link to='/'><FaArrowRight/> View All</Link></li>
+                    <li><Link to='/services'><FaArrowRight/> View All</Link></li>
                   </ul>
                 </div>
               </div>
@@ -335,16 +357,17 @@ Aos.init({duration: 400});
 
                 <div className='itemCover_img'>
                   <img src={banner2} />
+                  <img src={banner2Man} className='banner2Man'/>
                 </div>
 
                 <div className='itemCover_points'>
                   <ul>
-                    <li>Car<br /> Detailing</li>
-                    <li>Car<br /> Wash</li>
                     <li>Paint Protection<br /> Film (PPF)</li>
                     <li>Ceramic<br /> Coating</li>
+                    <li>Car<br /> Detailing</li>
+                    <li>Exterior<br/>Protection</li>
                     <li>Interior <br />Protection</li>
-                    <li><Link to='/'><FaArrowRight/> View All</Link></li>
+                    <li><Link to='/services'><FaArrowRight/> View All</Link></li>
                   </ul>
                 </div>
               </div>
@@ -451,7 +474,7 @@ Aos.init({duration: 400});
 
             </Slider>
 
-            <div className='center btnSpace' data-aos="fade-up">
+            <div className='center sevbtn textRight' data-aos="fade-up">
               <Link to='/services' className='btnS1 sizeH5 white fontBold'><FaArrowRight/> View All Services</Link>
             </div>
 
@@ -500,7 +523,7 @@ Aos.init({duration: 400});
                         <img src={tabnews.image} alt={tabnews.title} />
                       </div>
                       <div className='blogDataHmCont'>
-                        <h4>{tabnews.title}</h4>
+                        <h4 dangerouslySetInnerHTML={{__html: tabnews.title}} />
                         <p dangerouslySetInnerHTML={{ __html: tabnews.description }} />
                       </div>
                     </Link>
@@ -519,7 +542,7 @@ Aos.init({duration: 400});
                         <img src={tabevents.image} alt={tabevents.title} />
                       </div>
                       <div className='blogDataHmCont'>
-                        <h4>{tabevents.title}</h4>
+                      <h4 dangerouslySetInnerHTML={{__html: tabevents.title}} />
                         <p dangerouslySetInnerHTML={{ __html: tabevents.description }} />
                       </div>
                     </Link>
@@ -538,7 +561,7 @@ Aos.init({duration: 400});
                         <img src={tabblogs.image} alt={tabblogs.title} />
                       </div>
                       <div className='blogDataHmCont'>
-                        <h4>{tabblogs.title}</h4>
+                      <h4 dangerouslySetInnerHTML={{__html: tabblogs.title}} />
                         <p dangerouslySetInnerHTML={{ __html: tabblogs.description }} />
                       </div>
                     </Link>
