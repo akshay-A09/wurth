@@ -1091,6 +1091,16 @@ footer {
                 transition: all 0.5s;
                 transform: scale(0);
                 transition-delay: 0.7s;
+                .banner1Man{
+                    width: 19%;
+                    height:auto;
+                    position: absolute;
+                    left: 12%;
+                    bottom: 0;
+                    transform: scale(0);
+                    transition: all 0.5s;
+                    transition-delay:0s; 
+                }
             }
 
         }
@@ -1104,6 +1114,16 @@ footer {
                 width: 80%;
                 top: 33vh;
                 left: -100%;
+                .banner2Man{
+                    width: 11%;
+                    height:auto;
+                    position: absolute;
+                    left: 54.5%;
+                    top: 0;
+                    transform: scale(0);
+                    transition: all 0.5s;
+                    transition-delay:0s; 
+                }
             }
         }
     }
@@ -1129,11 +1149,19 @@ footer {
         .itemA {
             .itemCover_img {
                 transform: scale(1);
+                .banner1Man{
+                    transform: scale(1);
+                    transition-delay: 1.5s;
+                }
             }
         }
         .itemB {
             .itemCover_img {
                 left: 0;
+                .banner2Man{
+                    transform: scale(1);
+                    transition-delay: 1.5s;
+                }
             }
         }
 
@@ -1344,8 +1372,16 @@ footer {
     .servicesSlider {
         padding: 40px 0 0;
 
+        .sevbtn{
+            padding: 60px 0 30px;
+        }
+        .slick-dots{
+            bottom: -55px;left:17px
+        }
+
         .servicesSlider-slick {
             position: relative;
+            z-index: 2;
 
             .slick-arrow {
                 position: absolute;
@@ -2032,6 +2068,12 @@ footer {
 
 .ChooseYourShieldRow{
     padding-top: 40px;
+    .chartSlide{
+        img{
+            display: block;
+            width: 100%;
+        }
+    }
     .ChooseYourShieldCol{
         a{
             padding: 20px 0;

@@ -41,7 +41,7 @@ useEffect(() => {
     scrollTrigger: {
       trigger: ".clickBoxContact",
       toggleActions: "play none none none",
-      start: "top 90%",
+      start: "top 130%",
       end: "+=50%",
       scrub: true,
     },
