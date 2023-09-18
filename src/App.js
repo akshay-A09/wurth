@@ -10,6 +10,7 @@ import WurthPaintProtectionFilm from './Pages/services/WurthPaintProtectionFilm'
 import Locations from './Pages/Locations';
 import Gallery from './Pages/Gallery';
 import ContactUs from './Pages/ContactUs';
+import Products from './Pages/Products'
 import Error from './Pages/Error';
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
           <Route exact path='/locations' element={<Locations/>} />
           <Route exact path='/gallery' element={<Gallery/>} />
           <Route exact path='/contact-us' element={<ContactUs/>} />
+          <Route exact path='/products' element={<Products/>} />
           <Route exact path='*' element={<Error />} />
         </Routes>
       </Router>

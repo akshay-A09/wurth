@@ -31,6 +31,8 @@ import { FaArrowRight, FaMapMarkerAlt } from 'react-icons/fa';
 // site images
 import banner1 from '../Assets/Images/slider/banner1.png'
 import banner2 from '../Assets/Images/slider/banner2.png'
+import banner3 from '../Assets/Images/slider/banner3.png'
+import banner3Man from '../Assets/Images/slider/banner3Man.png'
 import banner2Man from '../Assets/Images/slider/banner2Man.png'
 import banner1Man from '../Assets/Images/slider/banner1Man.png'
 import carhaus from '../Assets/Images/carhaus.png';
@@ -122,7 +124,7 @@ Aos.init({duration: 400});
 
 // SEO Tag
   useEffect(() => {
-    document.title = 'Home - Würth CAR-Haus';
+    document.title = 'Home - WÜRTH CAR-Haus';
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute('content', '');
@@ -325,7 +327,7 @@ Aos.init({duration: 400});
 
                 <div className='itemCover_img'>
                   <img src={banner1} />
-                  <img src={banner1Man} className='banner1Man'/>
+                  <img src={banner1Man} className='bannerMan'/>
                 </div>
 
                 <div className='itemCover_points'>
@@ -357,7 +359,7 @@ Aos.init({duration: 400});
 
                 <div className='itemCover_img'>
                   <img src={banner2} />
-                  <img src={banner2Man} className='banner2Man'/>
+                  <img src={banner2Man} className='bannerMan'/>
                 </div>
 
                 <div className='itemCover_points'>
@@ -374,6 +376,39 @@ Aos.init({duration: 400});
             </div>
           </div>
      {/* SLider 2 End*/}
+ 
+ 
+     {/* SLider 3 */}
+     <div className='item itemC'>
+            <div className='itemCover'>
+              <div className='container'>
+                <div className='itemCover_hd'>
+                  <h2 className='itemCover_hd_call'>
+                    Technology<br />
+                    from Germany,<br />
+                    for <span>Cars in India</span>
+                  </h2>
+                </div>
+
+                <div className='itemCover_img'>
+                  <img src={banner3} />
+                  <img src={banner3Man} className='bannerMan'/>
+                </div>
+
+                <div className='itemCover_points'>
+                  <ul>
+                    <li>Paint Protection<br /> Film (PPF)</li>
+                    <li>Ceramic<br /> Coating</li>
+                    <li>Car<br /> Detailing</li>
+                    <li>Exterior<br/>Protection</li>
+                    <li>Interior <br />Protection</li>
+                    <li><Link to='/services'><FaArrowRight/> View All</Link></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+     {/* SLider 3 End*/}
  
  
 

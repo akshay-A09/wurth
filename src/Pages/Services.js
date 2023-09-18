@@ -13,12 +13,13 @@ import Aos from 'aos'
 import 'aos/dist/aos.css'
 // AOS End
 
+// Tabs
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import 'react-tabs/style/react-tabs.css';
+// Tabs
+
 // Images
 import services from '../Assets/Images/topBanners/services.jpg'
-import caWash from '../Assets/Images/services/car-wash.jpg'
-import exteriorEnrich from '../Assets/Images/services/exterior-enrich.jpg'
-import paintProtectionFilm2 from '../Assets/Images/services/paint-protection-film2.jpg'
-import uvShield from '../Assets/Images/services/uv-shield.jpg'
 
 // Services
 import PaintProtectionFilm from '../Assets/Images/services/images/PaintProtectionFilm.jpg';
@@ -55,7 +56,7 @@ const Services = () => {
    
   // SEO Tags
   useEffect(() => {
-    document.title = 'Services - Würth CAR-Haus';
+    document.title = 'Services - WÜRTH CAR-Haus';
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute('content', '');
@@ -70,113 +71,168 @@ const Services = () => {
   // AOS END
 
   // Data for the services 
-  const servicesDataList = [
+  const tabExterior = [
+    {
+      link: '/',
+      image: WurthCeraMaxx,
+      title: 'WÜRTH Cera-Maxx',
+    },
+   
     {
       link: '/services/wurth-paint-protection-film',
       image: PaintProtectionFilm,
-      title: 'Paint Protection Film',
+      title: 'WÜRTH Paint Protection Film',
     },
-    {
-      link: '/services/wurth-paint-protection-film',
-      image: BlueGreenWash,
-      title: 'Blue/Green Wash',
-    },
+  
     {
       link: '/',
-      image: uvShield2,
-      title: 'UV Shield',
+      image: WurthGlossSeal,
+      title: 'WÜRTH Gloss Seal',
     },
+    
     {
       link: '/',
       image: ExteriorEnrich,
       title: 'Exterior Enrich',
     },
+  
     {
       link: '/',
       image: PaintRevive,
       title: 'Paint Revive',
     },
+   
     {
       link: '/',
-      image: WurthGlossSeal,
-      title: 'Wurth Gloss Seal',
+      image: uvShield2,
+      title: 'UV Shield',
     },
+  
+  ];
+  
+  const tabInterior = [
     {
-      link: '/',
-      image: WurthCeraMaxx,
-      title: 'Wurth Cera-Maxx',
+      link: '/services/wurth-paint-protection-film',
+      image: PaintProtectionFilm,
+      title: 'Micro B clean plus',
     },
+  
     {
-      link: '/',
-      image: InterioClassy,
-      title: 'Interio Classy/ZERO-b/ZERO-b Plus',
+      link: '/services/wurth-paint-protection-film',
+      image: PaintProtectionFilm,
+      title: 'Micro B Clean',
     },
+  
     {
-      link: '/',
+      link: '/services/wurth-paint-protection-film',
+      image: PaintProtectionFilm,
+      title: 'Micro Classy',
+    },
+  
+  ];
+  
+  const tabCarWash = [
+    {
+      link: '/services/wurth-paint-protection-film',
+      image: BlueGreenWash,
+      title: 'Blue Wash',
+    },
+  
+    {
+      link: '/services/wurth-paint-protection-film',
+      image: PaintProtectionFilm,
+      title: 'Green Wash',
+    },
+  
+  ];
+  
+  const tabAntiRust = [
+    {
+      link: '/services/wurth-paint-protection-film',
       image: UnderbodyRustOff,
-      title: 'Underbody Rust-Off (3/5 Years)',
-    },{
-      link: '/',
-      image: WindshieldGlassPolish,
-      title: 'Windshield/Glass Polish (F/F&R)',
+      title: 'Underbody Rust Off',
     },
+  
     {
-      link: '/',
-      image: HeadLightRestoration,
-      title: 'HeadLight Restoration',
+      link: '/services/wurth-paint-protection-film',
+      image: UnderbodyRustOff,
+      title: 'Underbody Rust Off X-treme',
     },
+  
     {
-      link: '/',
-      image: ACVentCleaning,
-      title: 'AC Vent Cleaning (F/F&R)',
-    },
-    {
-      link: '/',
-      image: carACEvaporator,
-      title: 'AC Evaporator Cleaning',
-    },
-    {
-      link: '/',
-      image: SilencerCoating,
-      title: 'Silencer Coating',
-    },
-    {
-      link: '/',
+      link: '/services/wurth-paint-protection-film',
       image: CavityWaxProtection,
       title: 'Cavity Wax Protection',
     },
+  
     {
-      link: '/',
-      image: Acoustics4DSD,
-      title: 'Acoustics - 4 DSD',
+      link: '/services/wurth-paint-protection-film',
+      image: PaintProtectionFilm,
+      title: 'Exhaust Coating',
     },
+  
+  ];
+  
+  const tabACservices = [
     {
-      link: '/',
+      link: '/services/wurth-paint-protection-film',
+      image: ACVentCleaning,
+      title: 'A/C Vent Cleaning',
+    },
+  
+  ];
+  
+  const tabOtherApplications = [
+    {
+      link: '/services/wurth-paint-protection-film',
+      image: HeadLightRestoration,
+      title: 'Headlight Restoration',
+    },
+  
+    {
+      link: '/services/wurth-paint-protection-film',
+      image: WindshieldGlassPolish,
+      title: 'Windshield Polish',
+    },
+  
+    {
+      link: '/services/wurth-paint-protection-film',
       image: EmblemCleaning,
       title: 'Emblem Cleaning',
     },
+  
     {
-      link: '/',
+      link: '/services/wurth-paint-protection-film',
       image: ServicePlus,
       title: 'Service Plus',
     },
+  
     {
-      link: '/',
-      image: RodentRepellent,
-      title: 'Rodent Repellent ',
+      link: '/services/wurth-paint-protection-film',
+      image: Acoustics4DSD,
+      title: 'Acoustics-4 DSD',
     },
+  
     {
-      link: '/',
-      image: AlloyWheelPolish,
-      title: 'Alloy Wheel Polish ',
+      link: '/services/wurth-paint-protection-film',
+      image: AlloyWheelPolish ,
+      title: 'Alloy Wheel Polish',
     },
+  
     {
-      link: '/',
+      link: '/services/wurth-paint-protection-film',
       image: EngineCoat,
       title: 'Engine Coat',
     },
-    
+  
+    {
+      link: '/services/wurth-paint-protection-film',
+      image: RodentRepellent,
+      title: 'Rodent Repellent',
+    },
+  
   ];
+  
   // Data for the services  End
 
 
@@ -275,23 +331,129 @@ const Services = () => {
 
   <section className='itemList pT'>
       <div className='container'>
-          <div className='itemListRow'>
 
-          {servicesDataList.map((service, index) => (
-          <div className='itemListCol' key={index} data-aos="zoom-in">
-            <Link to={service.link} className='white'>
-              <div className='itemListColBg'>
-                <img src={service.image} alt={service.title} />
-              </div>
-                <div className='itemListColTxt'>
-                  {service.title}
-                  <div className='itemListColTxtIcon'><FaArrowRight/></div>
-                </div>
-            </Link>
-          </div>
-          ))}
-            
-          </div>
+      <Tabs>
+            <TabList>
+            <Tab><span>EXTERIOR</span></Tab>
+            <Tab><span>INTERIOR</span></Tab>
+            <Tab><span>CAR WASH</span></Tab>
+            <Tab><span>ANTI RUST</span></Tab>
+            <Tab><span>A/C SERVICES</span></Tab>
+            <Tab><span>OTHER APPLICATIONS</span></Tab>
+            </TabList>
+
+            <TabPanel className='tabExterior'>
+            <div className='itemListRow'>
+                {tabExterior.map((service, index) => (
+                  <div className='itemListCol' key={index} data-aos="zoom-in">
+                    <Link to={service.link} className='white'>
+                      <div className='itemListColBg'>
+                        <img src={service.image} alt={service.title} />
+                      </div>
+                        <div className='itemListColTxt'>
+                          {service.title}
+                          <div className='itemListColTxtIcon'><FaArrowRight/></div>
+                        </div>
+                    </Link>
+                  </div>
+                ))}
+            </div>  
+            </TabPanel>
+
+            <TabPanel className='tabInterior'>
+            <div className='itemListRow'>
+                {tabInterior.map((service, index) => (
+                  <div className='itemListCol' key={index} data-aos="zoom-in">
+                    <Link to={service.link} className='white'>
+                      <div className='itemListColBg'>
+                        <img src={service.image} alt={service.title} />
+                      </div>
+                        <div className='itemListColTxt'>
+                          {service.title}
+                          <div className='itemListColTxtIcon'><FaArrowRight/></div>
+                        </div>
+                    </Link>
+                  </div>
+                ))}
+            </div>  
+            </TabPanel>
+
+            <TabPanel className='tabCarWash'>
+            <div className='itemListRow'>
+                {tabCarWash.map((service, index) => (
+                  <div className='itemListCol' key={index} data-aos="zoom-in">
+                    <Link to={service.link} className='white'>
+                      <div className='itemListColBg'>
+                        <img src={service.image} alt={service.title} />
+                      </div>
+                        <div className='itemListColTxt'>
+                          {service.title}
+                          <div className='itemListColTxtIcon'><FaArrowRight/></div>
+                        </div>
+                    </Link>
+                  </div>
+                ))}
+            </div>  
+            </TabPanel>
+
+            <TabPanel className='tabAntiRust'>
+            <div className='itemListRow'>
+                {tabAntiRust.map((service, index) => (
+                  <div className='itemListCol' key={index} data-aos="zoom-in">
+                    <Link to={service.link} className='white'>
+                      <div className='itemListColBg'>
+                        <img src={service.image} alt={service.title} />
+                      </div>
+                        <div className='itemListColTxt'>
+                          {service.title}
+                          <div className='itemListColTxtIcon'><FaArrowRight/></div>
+                        </div>
+                    </Link>
+                  </div>
+                ))}
+            </div>  
+            </TabPanel>
+
+
+            <TabPanel className='tabACservices'>
+            <div className='itemListRow'>
+                {tabACservices.map((service, index) => (
+                  <div className='itemListCol' key={index} data-aos="zoom-in">
+                    <Link to={service.link} className='white'>
+                      <div className='itemListColBg'>
+                        <img src={service.image} alt={service.title} />
+                      </div>
+                        <div className='itemListColTxt'>
+                          {service.title}
+                          <div className='itemListColTxtIcon'><FaArrowRight/></div>
+                        </div>
+                    </Link>
+                  </div>
+                ))}
+            </div>  
+            </TabPanel>
+
+
+            <TabPanel className='tabOtherApplications'>
+            <div className='itemListRow'>
+                {tabOtherApplications.map((service, index) => (
+                  <div className='itemListCol' key={index} data-aos="zoom-in">
+                    <Link to={service.link} className='white'>
+                      <div className='itemListColBg'>
+                        <img src={service.image} alt={service.title} />
+                      </div>
+                        <div className='itemListColTxt'>
+                          {service.title}
+                          <div className='itemListColTxtIcon'><FaArrowRight/></div>
+                        </div>
+                    </Link>
+                  </div>
+                ))}
+            </div>  
+            </TabPanel>
+
+      </Tabs>
+
       </div>
   </section>
 

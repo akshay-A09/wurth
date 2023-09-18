@@ -7,7 +7,7 @@ const Error = () => {
   const [counters, setCounters] = useState([0, 0, 0, 0]); // Initialize with 0
 
   useEffect(() => {
-    document.title = '404 - CarHaus Wurth';
+    document.title = '404 - CarHaus WÜRTH';
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute('content', '');
