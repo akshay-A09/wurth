@@ -17,7 +17,7 @@ const Locations = () => {
         
   // SEO Tags
   useEffect(() => {
-    document.title = 'Locations - Würth CAR-Haus';
+    document.title = 'Locations - WÜRTH CAR-Haus';
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute('content', '');

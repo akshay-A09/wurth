@@ -32,7 +32,7 @@ const WurthPaintProtectionFilm = () => {
 
   // SEO Tags
   useEffect(() => {
-    document.title = 'Wurth Paint Protection Film | Services - Würth CAR-Haus';
+    document.title = 'WÜRTH Paint Protection Film | Services - Würth CAR-Haus';
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute('content', '');

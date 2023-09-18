@@ -22,7 +22,7 @@ const ContactUs = () => {
     
   // SEO Tags
   useEffect(() => {
-    document.title = 'Contact Us - Würth CAR-Haus';
+    document.title = 'Contact Us - WÜRTH CAR-Haus';
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute('content', '');
@@ -103,21 +103,16 @@ useEffect(() => {
 
       <section className='clickBoxContact'> <div className='container'>
 
-        <div className='clickBoxCol white redB'>
-          <h4 className='sizeH3'>Elevate Your Car Care Experience Today!</h4>
-          <p>Ready to experience the difference with<br />
-            <span className='tu fontBold'>Würth CAR<span className='fontBook'>-Haus</span></span>? Book an appointment or contact our nearest location to get started.</p>
-          <div className='btnSpace'>
-            <Link to='/' className='btnS2 white fontBold blackB'>Book an Appointment</Link>
-          </div>
+        <div className='clickBoxCol clickBoxColBg'>
+        
         </div>
 
-        <div className='clickBoxCol lightgreyB'>
+        <div className='clickBoxCol white redB'>
           <h4 className='sizeH3'>Looking to be a Franchisee<br/>
-of <span className='tu fontBold red'>Würth Car<span className='fontBook'>-Haus?</span></span></h4>
+of <span className='tu fontBold'>Würth Car<span className='fontBook'>-Haus?</span></span></h4>
           <p>Fill in the form below and we’ll be in touch with you.</p>
           <div className='btnSpaceEx'>
-            <Link to='/' className='btnS2 white fontBold redB'>Enquire now</Link>
+            <Link to='/' className='btnS2 white fontBold blackB'>Enquire now</Link>
           </div>
         </div>
       </div></section>
@@ -129,9 +124,6 @@ of <span className='tu fontBold red'>Würth Car<span className='fontBook'>-Haus?
             <Link to='/services' className='btnS1 sizeH4 black'><FaArrowRight/> Check out our Services</Link>
         </div>
     </section>
-
-
-
 
 
       <Footer/>
