@@ -1,6 +1,8 @@
 import React, {useEffect} from 'react'
 import Header from '../Components/Header'
 import Footer from '../Components/Footer'
+import EnquireNow from '../Components/Forms/EnquireNow'
+
 import { Link } from 'react-router-dom';
 import { FaArrowRight, FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from 'react-icons/fa';
 
@@ -20,13 +22,15 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 const ContactUs = () => {
     
+  
   // SEO Tags
   useEffect(() => {
-    document.title = 'Contact Us - Würth CAR-Haus';
+    document.title = 'Contact Us - WÜRTH CAR-Haus';
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute('content', '');
     }
+
   }, []);
   // SEO Tags End
 
@@ -52,6 +56,8 @@ useEffect(() => {
 }, []);
 // GSPA End
 
+  // Form PopUp
+  const [openModalEnquireNow, setOpenModalEnquireNow] = React.useState(false);
 
   return (
     <>
@@ -79,7 +85,6 @@ useEffect(() => {
 
 
 
-
         <section className='aboutData'>
         <div className='container'>
             <div className='aboutDataRow'>
@@ -103,35 +108,35 @@ useEffect(() => {
 
       <section className='clickBoxContact'> <div className='container'>
 
-        <div className='clickBoxCol white redB'>
-          <h4 className='sizeH3'>Elevate Your Car Care Experience Today!</h4>
-          <p>Ready to experience the difference with<br />
-            <span className='tu fontBold'>Würth CAR<span className='fontBook'>-Haus</span></span>? Book an appointment or contact our nearest location to get started.</p>
-          <div className='btnSpace'>
-            <Link to='/' className='btnS2 white fontBold blackB'>Book an Appointment</Link>
-          </div>
+        <div className='clickBoxCol clickBoxColBg'>
+        
         </div>
 
-        <div className='clickBoxCol lightgreyB'>
+        <div className='clickBoxCol white redB'>
           <h4 className='sizeH3'>Looking to be a Franchisee<br/>
-of <span className='tu fontBold red'>Würth Car<span className='fontBook'>-Haus?</span></span></h4>
+of <span className='tu fontBold'>Würth Car<span className='fontBook'>-Haus?</span></span></h4>
           <p>Fill in the form below and we’ll be in touch with you.</p>
           <div className='btnSpaceEx'>
-            <Link to='/' className='btnS2 white fontBold redB'>Enquire now</Link>
+            <Link  className='btnS2 white fontBold blackB' onClick={() => { setOpenModalEnquireNow(true); }}>Enquire now</Link>
+
+          
+
           </div>
+
+
+
         </div>
       </div></section>
 
-
+    
 
       <section className='checkoutSvr center' data-aos="fade-up">
         <div className='container'>
             <Link to='/services' className='btnS1 sizeH4 black'><FaArrowRight/> Check out our Services</Link>
         </div>
     </section>
-
-
-
+  
+    {openModalEnquireNow && <EnquireNow closeModal={setOpenModalEnquireNow} />}
 
 
       <Footer/>

@@ -23,7 +23,7 @@ const About = () => {
     
   // SEO Tags
   useEffect(() => {
-    document.title = 'About Us - Würth CAR-Haus';
+    document.title = 'About Us - WÜRTH CAR-Haus';
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute('content', '');
@@ -74,7 +74,7 @@ useEffect(() => {
   
   // About Count List 
   const listItemsData = [
-    { count: '27', text: 'Products' },
+    { count: '200+', text: 'Products' },
     { count: '25+', text: 'Years of Excellence' },
     { count: '1,000+', text: 'Employees in India' },
     { count: '27', text: 'Number of Services' },

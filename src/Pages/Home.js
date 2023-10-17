@@ -2,6 +2,7 @@ import React, {useEffect} from 'react'
 import Header from '../Components/Header';
 import Footer from '../Components/Footer';
 import { Link } from 'react-router-dom';
+import BookAnAppointment from '../Components/Forms/BookAnAppointment'
 
 // AOS
 import Aos from 'aos'
@@ -31,10 +32,11 @@ import { FaArrowRight, FaMapMarkerAlt } from 'react-icons/fa';
 // site images
 import banner1 from '../Assets/Images/slider/banner1.png'
 import banner2 from '../Assets/Images/slider/banner2.png'
+import banner3 from '../Assets/Images/slider/banner3.png'
+import banner3Man from '../Assets/Images/slider/banner3Man.png'
 import banner2Man from '../Assets/Images/slider/banner2Man.png'
 import banner1Man from '../Assets/Images/slider/banner1Man.png'
 import carhaus from '../Assets/Images/carhaus.png';
-import PaintProtectionFilm from '../Assets/Images/services/paint-protection-film.jpg';
 import demo1 from '../Assets/Images/news/demo1.jpg';
 import demo2 from '../Assets/Images/news/demo2.jpg';
 import demo3 from '../Assets/Images/news/demo3.jpg';
@@ -122,7 +124,7 @@ Aos.init({duration: 400});
 
 // SEO Tag
   useEffect(() => {
-    document.title = 'Home - Würth CAR-Haus';
+    document.title = 'Home - WÜRTH CAR-Haus';
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute('content', '');
@@ -301,7 +303,9 @@ Aos.init({duration: 400});
   // Data for the Latest  Updates Tabs End
  
 
- 
+  // Form PopUp
+  const [OpenModalBookAnAppointment, setOpenModalBookAnAppointment] = React.useState(false);
+
 
 
 
@@ -325,7 +329,7 @@ Aos.init({duration: 400});
 
                 <div className='itemCover_img'>
                   <img src={banner1} />
-                  <img src={banner1Man} className='banner1Man'/>
+                  <img src={banner1Man} className='bannerMan'/>
                 </div>
 
                 <div className='itemCover_points'>
@@ -357,7 +361,7 @@ Aos.init({duration: 400});
 
                 <div className='itemCover_img'>
                   <img src={banner2} />
-                  <img src={banner2Man} className='banner2Man'/>
+                  <img src={banner2Man} className='bannerMan'/>
                 </div>
 
                 <div className='itemCover_points'>
@@ -374,6 +378,39 @@ Aos.init({duration: 400});
             </div>
           </div>
      {/* SLider 2 End*/}
+ 
+ 
+     {/* SLider 3 */}
+     <div className='item itemC'>
+            <div className='itemCover'>
+              <div className='container'>
+                <div className='itemCover_hd'>
+                  <h2 className='itemCover_hd_call'>
+                    Technology<br />
+                    from Germany,<br />
+                    for <span>Cars in India</span>
+                  </h2>
+                </div>
+
+                <div className='itemCover_img'>
+                  <img src={banner3} />
+                  <img src={banner3Man} className='bannerMan'/>
+                </div>
+
+                <div className='itemCover_points'>
+                  <ul>
+                    <li>Paint Protection<br /> Film (PPF)</li>
+                    <li>Ceramic<br /> Coating</li>
+                    <li>Car<br /> Detailing</li>
+                    <li>Exterior<br/>Protection</li>
+                    <li>Interior <br />Protection</li>
+                    <li><Link to='/services'><FaArrowRight/> View All</Link></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+     {/* SLider 3 End*/}
  
  
 
@@ -490,7 +527,7 @@ Aos.init({duration: 400});
           <p>Ready to experience the difference with<br />
             <span className='tu fontBold'>Würth CAR<span className='fontBook'>-Haus</span></span>? Book an appointment or contact our nearest location to get started.</p>
           <div className='btnSpace'>
-            <Link to='/' className='btnS2 white fontBold blackB'>Book an Appointment</Link>
+            <Link  onClick={() => { setOpenModalBookAnAppointment(true); }} className='btnS2 white fontBold blackB'>Book an Appointment</Link>
           </div>
         </div>
 
@@ -575,7 +612,7 @@ Aos.init({duration: 400});
       </div>
       </section>
 
-
+      {OpenModalBookAnAppointment && <BookAnAppointment closeModal={setOpenModalBookAnAppointment} />}
 
       <Footer />
     </>

@@ -4,10 +4,10 @@ import Footer from '../Components/Footer';
 import { Link } from 'react-router-dom';
 
 const Error = () => {
-  const [counters, setCounters] = useState([0, 0, 0, 0]); // Initialize with 0
+  const [counters, setCounters] = useState([0]); // Initialize with 0
 
   useEffect(() => {
-    document.title = '404 - CarHaus Wurth';
+    document.title = '404 - CarHaus WÜRTH';
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute('content', '');
@@ -15,7 +15,7 @@ const Error = () => {
 
     // Function to start counting animation
     const startCounting = () => {
-      const targetCounters = [1000, 5000, 1020, 1300]; // Your target numbers
+      const targetCounters = [1000]; // Your target numbers
       const interval = 20; // Interval between each increment (in milliseconds)
       const steps = 50; // Number of steps to reach the target
 
@@ -61,6 +61,10 @@ const Error = () => {
           </div>
         ))}
       </div>
+
+
+ 
+
 
       <Footer />
     </>

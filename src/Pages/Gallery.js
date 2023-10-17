@@ -40,7 +40,7 @@ const Gallery = () => {
 
 // SEO Tags
   useEffect(() => {
-    document.title = 'Gallery - Würth CAR-Haus';
+    document.title = 'Gallery - WÜRTH CAR-Haus';
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute('content', '');

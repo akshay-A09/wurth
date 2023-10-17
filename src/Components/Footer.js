@@ -1,14 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from "react-router-dom";
-import { FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube, FaEnvelope, FaPhoneAlt } from 'react-icons/fa';
+import { FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube, FaEnvelope, FaPhoneAlt, FaArrowRight } from 'react-icons/fa';
+import BookAnAppointment from './Forms/BookAnAppointment'
+import FranchiseEnquiry from './Forms/FranchiseEnquiry'
 
 
 const Footer = () => {
+
+  
+ // Form PopUp
+ const [OpenModalBookAnAppointment, setOpenModalBookAnAppointment] = React.useState(false);
+
+ const [OpenModalFranchiseEnquiry, setOpenModalFranchiseEnquiry] = React.useState(false);
+
   return (
     <>
       <footer>
         <div className='ftSocial center'><div className='container'>
-          <h2 className='sizeH3 tu'><span className='tu fontBold red wp'>Würth Car<span className='fontBook'>-Haus</span></span> on social</h2>
+          <h2 className='sizeH3 tu'><span className='tu fontBold red wp'>WÜRTH Car<span className='fontBook'>-Haus</span></span> on social</h2>
           <ul>
           <li><Link to='/'><i><FaFacebookF /></i> Facebook</Link></li>
           <li><Link to='/'><i><FaInstagram /></i> Instagram</Link></li>
@@ -20,39 +29,106 @@ const Footer = () => {
         <div className='ftNavs'><div className='container'>
 
           <div className='ftNavsL'>
+
+
+          <div className='ftNavsLLink'>
           <Link to='/'>Home</Link>
           <Link to='/about'>About Us</Link>
           <Link to='/services'>Services</Link>
           <Link to='/'>Blogs</Link>
-          <Link to='/'>Book on Appoinment</Link>
-          <Link to='/'>Franchise Enquiry</Link>
+          <Link onClick={() => { setOpenModalBookAnAppointment(true); }}>Book on Appoinment</Link>
+          <Link onClick={() => { setOpenModalFranchiseEnquiry(true); }}>Franchise Enquiry</Link>
+          </div>
+          
+
+        <div className='subNews'>
+          <h3 className='sizeH3 red'>Stay updated<br/> with the latest offers,<br/> news and more.</h3>
+
+       
+      <form className='stayUpdated'>
+       <div className='stayUpdatedCol'>
+        <label>
+          <input type="email" placeholder='Email  ID'  required />
+        </label>
+        <button type="submit"><FaArrowRight/></button>
+        </div>
+      </form>
+       
+        </div>
+
+
           </div>
 
           <div className='ftNavsR'>
           <h3 className='sizeH5 red tu'>Services</h3>
+  <div className='svrList'>
+
+
+<div className='svrListCol'>
 <ul>
-<li><Link to='/'>Blue/Green Wash </Link></li>
-<li><Link to='/'>UV Shield</Link></li>
+<li><h4>EXTERIOR</h4></li>
+<li><Link to='/'>WÜRTH Cera-Maxx</Link></li>
+<li><Link to='/'>WÜRTH Paint Protection Film</Link></li>
+<li><Link to='/'>WÜRTH Gloss Seal</Link></li>
 <li><Link to='/'>Exterior Enrich</Link></li>
 <li><Link to='/'>Paint Revive</Link></li>
-<li><Link to='/'>Wurth Gloss Seal </Link></li>
-<li><Link to='/'>Wurth Cera-Maxx</Link></li>
-<li><Link to='/'>Interio Classy/ZERO-b/ZERO-b Plus</Link></li>
-<li><Link to='/'>Underbody Rust-Off (3/5 Years)</Link></li>
-<li><Link to='/'>Windshield/Glass Polish (F/F&R)</Link></li>
-<li><Link to='/'>HeadLight Restoration</Link></li>
-<li><Link to='/'>AC Vent Cleaning (F/F&R)</Link></li>
-<li><Link to='/'>AC Evaporator Cleaning</Link></li>
-<li><Link to='/'>Silencer Coating</Link></li>
-<li><Link to='/'>Cavity Wax Protection</Link></li>
-<li><Link to='/'>Acoustics - 4 DSD</Link></li>
-<li><Link to='/'>Emblem Cleaning</Link></li>
-<li><Link to='/'>Service Plus</Link></li>
-<li><Link to='/'>Rodent Repellent </Link></li>
-<li><Link to='/'>Alloy Wheel Polish </Link></li>
-<li><Link to='/'>Engine Coat</Link></li>
-<li><Link to='/services/wurth-paint-protection-film'>Paint Protection Film</Link></li>
+<li><Link to='/'>UV Shield </Link></li>
 </ul>
+
+<ul>
+<li><h4>INTERIOR</h4></li>
+<li><Link to='/'>Micro B clean plus </Link></li>
+<li><Link to='/'>Micro B Clean</Link></li>
+<li><Link to='/'>Micro Classy</Link></li>
+</ul>
+</div>
+
+
+
+<div className='svrListCol'>
+<ul>
+<li><h4>CAR WASH</h4></li>
+<li><Link to='/'>Blue Wash</Link></li>
+<li><Link to='/'>Green Wash</Link></li>
+</ul>
+
+<ul>
+<li><h4>ANTI RUST</h4></li>
+<li><Link to='/'>Underbody Rust Off</Link></li>
+<li><Link to='/'>Underbody Rust Off X-treme</Link></li>
+<li><Link to='/'>Cavity Wax Protection</Link></li>
+<li><Link to='/'>Exhaust Coating</Link></li>
+</ul>
+
+<ul>
+<li><h4>A/C SERVICES</h4></li>
+<li><Link to='/'>A/C Vent Cleaning</Link></li>
+</ul>
+
+</div>
+
+
+
+<div className='svrListCol'>
+ 
+<ul>
+<li><h4>OTHER APPLICATIONS</h4></li>
+<li><Link to='/'>Headlight Restoration</Link></li>
+<li><Link to='/'>Windshield Polish</Link></li>
+<li><Link to='/'>Emblem Cleaning</Link></li>
+<li><Link to='/'>Service Plus </Link></li>
+<li><Link to='/'>Acoustics-4 DSD </Link></li>
+<li><Link to='/'>Alloy Wheel Polish</Link></li>
+<li><Link to='/'>Engine Coat</Link></li>
+<li><Link to='/'>Rodent Repellent</Link></li>
+</ul>
+</div>
+
+
+
+
+
+</div>
 
           </div>
 
@@ -79,11 +155,11 @@ const Footer = () => {
 
 
         <div className='ftConnectWurth'><div className='container'>
-        <Link to='/'>Würth Group </Link>
+        <Link to='/'>WÜRTH Group </Link>
         <span>|</span>
-        <Link to='/'>Würth International</Link> 
+        <Link to='/'>WÜRTH International</Link> 
         <span>|</span>
-        <Link to='/'>Würth India</Link>
+        <Link to='/'>WÜRTH India</Link>
 
         </div></div>
 
@@ -104,7 +180,14 @@ const Footer = () => {
 
 
 
-      <div className='bookanappointment_btm'><Link to='/'>Book an Appointment</Link></div>
+      <div className='bookanappointment_btm'><Link onClick={() => { setOpenModalBookAnAppointment(true); }}>Book an Appointment</Link></div>
+
+
+      {OpenModalBookAnAppointment && <BookAnAppointment closeModal={setOpenModalBookAnAppointment} />}
+      {OpenModalFranchiseEnquiry && <FranchiseEnquiry closeModal={setOpenModalFranchiseEnquiry} />}
+
+      
+
     </> 
   )
 }
