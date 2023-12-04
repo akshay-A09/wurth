@@ -2,6 +2,7 @@ import React, {useEffect} from 'react'
 import Header from '../Components/Header';
 import Footer from '../Components/Footer';
 import { Link } from 'react-router-dom';
+import BookAnAppointment from '../Components/Forms/BookAnAppointment'
 
 // AOS
 import Aos from 'aos'
@@ -36,15 +37,13 @@ import banner3Man from '../Assets/Images/slider/banner3Man.png'
 import banner2Man from '../Assets/Images/slider/banner2Man.png'
 import banner1Man from '../Assets/Images/slider/banner1Man.png'
 import carhaus from '../Assets/Images/carhaus.png';
-import PaintProtectionFilm from '../Assets/Images/services/paint-protection-film.jpg';
 import demo1 from '../Assets/Images/news/demo1.jpg';
 import demo2 from '../Assets/Images/news/demo2.jpg';
 import demo3 from '../Assets/Images/news/demo3.jpg';
-
 import CarDetailing from '../Assets/Images/services/images/CarDetailing.jpg';
 import CarWash from '../Assets/Images/services/images/CarWash.jpg';
 import CeramicCoating from '../Assets/Images/services/images/CeramicCoating.jpg';
-import ExreriorProtection from '../Assets/Images/services/images/ExreriorProtection.jpg';
+import ExteriorProtection from '../Assets/Images/services/images/ExteriorProtection.jpg';
 import InteriorCare from '../Assets/Images/services/images/InteriorCare.jpg';
 import ppf from '../Assets/Images/services/images/ppf.jpg';
 // site images end
@@ -166,10 +165,10 @@ Aos.init({duration: 400});
 
   // About Count List 
   const listItemsData = [
-    { count: '80+', text: 'Countries' },
-    { count: '150+', text: 'Services' },
-    { count: '5000+', text: 'Satisfied Clients' },
-    { count: '20+', text: 'Years of Excellence' },
+    { count: '30th', text: 'Year in India' },
+    { count: '30+', text: 'Number of Services' },
+    { count: '1,000+', text: 'Employees in India' },
+    { count: '100+', text: 'Products' },
   ];
   // About Count List End
 
@@ -184,31 +183,31 @@ Aos.init({duration: 400});
     {
       title: 'Ceramic Coating',
       image: CeramicCoating,
-      description: "Experience unparalleled attention to detail with our comprehensive car detailing packages. Whether it's restoring your vehicle's shine or rejuvenating the interior, our experts will leave your car looking flawless.",
+      description: "Give your car a lasting shine with our ceramic coating treatment. Experience superior hydrophobic properties and added protection against environmental elements.",
       link: '/',
     },  
      {
       title: 'Car Detailing',
       image: CarDetailing,
-      description: "Shield your car's paint from road debris and scratches with our premium PPF solutions. Our high-quality films offer unparalleled protection while preserving your vehicle's appearance.",
+      description: "Experience unparalleled attention to detail with our comprehensive car detailing packages. Whether it's restoring your vehicle's shine or rejuvenating the interior, our experts will leave your car looking flawless.",
       link: '/',
     },
     {
-      title: 'Exrerior Protection',
-      image: ExreriorProtection,
-      description: "Experience unparalleled attention to detail with our comprehensive car detailing packages. Whether it's restoring your vehicle's shine or rejuvenating the interior, our experts will leave your car looking flawless.",
+      title: 'Exterior Protection',
+      image: ExteriorProtection,
+      description: "Enhance your vehicle's beauty with our precise exterior detailing. Bid farewell to imperfections and embrace a flawless, professionally polished finish.",
       link: '/',
     },
     {
       title: 'Interior Care',
       image: InteriorCare,
-      description: "Shield your car's paint from road debris and scratches with our premium PPF solutions. Our high-quality films offer unparalleled protection while preserving your vehicle's appearance.",
+      description: "Elevate your driving experience with our expert interior detailing. From upholstery to dashboard, we rejuvenate every aspect, ensuring a pristine and comfortable environment.",
       link: '/',
     },
     {
       title: 'Car Wash',
       image: CarWash,
-      description: "Experience unparalleled attention to detail with our comprehensive car detailing packages. Whether it's restoring your vehicle's shine or rejuvenating the interior, our experts will leave your car looking flawless.",
+      description: "Experience meticulous washing and premium products, leaving your vehicle gleaming with class and prestige. Indulge in the Würth difference with blue wash and green wash.",
       link: '/',
     },  
  
@@ -303,7 +302,9 @@ Aos.init({duration: 400});
   // Data for the Latest  Updates Tabs End
  
 
- 
+  // Form PopUp
+  const [OpenModalBookAnAppointment, setOpenModalBookAnAppointment] = React.useState(false);
+
 
 
 
@@ -326,8 +327,8 @@ Aos.init({duration: 400});
                 </div>
 
                 <div className='itemCover_img'>
-                  <img src={banner1} />
-                  <img src={banner1Man} className='bannerMan'/>
+                  <img src={banner1} alt='Elevate Your Ride with Würth CAR-Haus'/>
+                  <img src={banner1Man} className='bannerMan' alt='Elevate Your Ride with Würth CAR-Haus'/>
                 </div>
 
                 <div className='itemCover_points'>
@@ -358,8 +359,8 @@ Aos.init({duration: 400});
                 </div>
 
                 <div className='itemCover_img'>
-                  <img src={banner2} />
-                  <img src={banner2Man} className='bannerMan'/>
+                  <img src={banner2} alt='Technology from Germany, for Cars in India'/>
+                  <img src={banner2Man} className='bannerMan' alt='Technology from Germany, for Cars in India'/>
                 </div>
 
                 <div className='itemCover_points'>
@@ -391,8 +392,8 @@ Aos.init({duration: 400});
                 </div>
 
                 <div className='itemCover_img'>
-                  <img src={banner3} />
-                  <img src={banner3Man} className='bannerMan'/>
+                  <img src={banner3} alt='Technology from Germany, for Cars in India' />
+                  <img src={banner3Man} className='bannerMan' alt='Technology from Germany, for Cars in India'/>
                 </div>
 
                 <div className='itemCover_points'>
@@ -466,7 +467,7 @@ Aos.init({duration: 400});
 
       <section className='carHaus'>
         <div className='carHausAfter'></div>
-        <img src={carhaus} />
+        <img src={carhaus} alt='carhaus' /> 
       </section>
 
       <section className='hmServices white'>
@@ -480,7 +481,7 @@ Aos.init({duration: 400});
 
             <div className='TsectHdR' data-aos="fade-up">
               <h3 className='sizeH3'>Experience Premium Care with  <span className='red'>Our Services</span></h3>
-              <p>From meticulous detailing to advanced paint protection solutions, we have tailored our services to meet your car's unique needs</p>
+              <p>From meticulous detailing to advanced paint protection solutions, we have tailored our services to meet your car's unique needs.</p>
             </div>
 
           </div>
@@ -522,10 +523,9 @@ Aos.init({duration: 400});
 
         <div className='clickBoxCol white' data-aos="fade-up">
           <h4 className='sizeH3'>Elevate Your Car Care Experience Today!</h4>
-          <p>Ready to experience the difference with<br />
-            <span className='tu fontBold'>Würth CAR<span className='fontBook'>-Haus</span></span>? Book an appointment or contact our nearest location to get started.</p>
+          <p>Ready to experience the difference with <span className='tu fontBold'>Würth CAR<span className='fontBook'>-Haus</span></span>?<br /> Book an appointment or contact our nearest location to get started.</p>
           <div className='btnSpace'>
-            <Link to='/' className='btnS2 white fontBold blackB'>Book an Appointment</Link>
+            <Link  onClick={() => { setOpenModalBookAnAppointment(true); }} className='btnS2 white fontBold blackB'>Book an Appointment</Link>
           </div>
         </div>
 
@@ -610,7 +610,7 @@ Aos.init({duration: 400});
       </div>
       </section>
 
-
+      {OpenModalBookAnAppointment && <BookAnAppointment closeModal={setOpenModalBookAnAppointment} />}
 
       <Footer />
     </>

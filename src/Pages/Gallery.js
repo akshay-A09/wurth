@@ -4,8 +4,6 @@ import Footer from '../Components/Footer'
 import { Link } from 'react-router-dom';
 import Fancybox from "../Components/Fancybox";
 
-
-
 // Icons
 import { FaArrowRight } from 'react-icons/fa';
 // Icons End
@@ -24,14 +22,10 @@ import 'slick-carousel/slick/slick.css'
 import gallery from '../Assets/Images/topBanners/gallery.jpg'
 import gallery1 from '../Assets/Images/gallery/gallery1.jpg'
 import demo from '../Assets/Images/demo.jpg'
-import PaintProtectionFilm from '../Assets/Images/services/paint-protection-film.jpg';
-
-
-
 import CarDetailing from '../Assets/Images/services/images/CarDetailing.jpg';
 import CarWash from '../Assets/Images/services/images/CarWash.jpg';
 import CeramicCoating from '../Assets/Images/services/images/CeramicCoating.jpg';
-import ExreriorProtection from '../Assets/Images/services/images/ExreriorProtection.jpg';
+import ExteriorProtection from '../Assets/Images/services/images/ExteriorProtection.jpg';
 import InteriorCare from '../Assets/Images/services/images/InteriorCare.jpg';
 import ppf from '../Assets/Images/services/images/ppf.jpg';
 // Images End
@@ -132,8 +126,8 @@ const Gallery = () => {
       link: '/',
     },
     {
-      title: 'Exrerior Protection',
-      image: ExreriorProtection,
+      title: 'Exterior Protection',
+      image: ExteriorProtection,
       description: "Experience unparalleled attention to detail with our comprehensive car detailing packages. Whether it's restoring your vehicle's shine or rejuvenating the interior, our experts will leave your car looking flawless.",
       link: '/',
     },
@@ -308,7 +302,7 @@ const customerJourneyData = [
     <Slider {...customerJourneySlider} className="slick-slider customerJourneySlider">
     {customerJourneyData.map((item, index) => (
             <div className='item' key={index}>
-                <Link data-fancybox={item.name} to={item.linkYT}><img src={item.image} /></Link>
+                <Link data-fancybox={item.name} to={item.linkYT}><img src={item.image} alt="item.image"/></Link>
             </div>
         ))}
     </Slider>

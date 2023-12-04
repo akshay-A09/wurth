@@ -92,7 +92,7 @@ const Locations = () => {
 
     <section className='topBanner'>
         <div className='topBannerImg'>
-            <img src={locations} />
+            <img src={locations} alt="locations"/>
         </div>
         <div className='topBannerText'>
             <div className='container'>

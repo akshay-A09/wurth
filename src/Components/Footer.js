@@ -1,19 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from "react-router-dom";
-import { FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube, FaEnvelope, FaPhoneAlt, FaArrowRight } from 'react-icons/fa';
+import { FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube, FaEnvelope, FaPhoneAlt, FaArrowRight, FaTwitch, FaTwitter } from 'react-icons/fa';
+import BookAnAppointment from './Forms/BookAnAppointment'
+import FranchiseEnquiry from './Forms/FranchiseEnquiry'
 
 
 const Footer = () => {
+
+  
+ // Form PopUp
+ const [OpenModalBookAnAppointment, setOpenModalBookAnAppointment] = React.useState(false);
+
+ const [OpenModalFranchiseEnquiry, setOpenModalFranchiseEnquiry] = React.useState(false);
+
   return (
     <>
       <footer>
         <div className='ftSocial center'><div className='container'>
           <h2 className='sizeH3 tu'><span className='tu fontBold red wp'>WÜRTH Car<span className='fontBook'>-Haus</span></span> on social</h2>
           <ul>
-          <li><Link to='/'><i><FaFacebookF /></i> Facebook</Link></li>
-          <li><Link to='/'><i><FaInstagram /></i> Instagram</Link></li>
-          <li><Link to='/'><i><FaLinkedinIn /></i> Linkedin</Link></li>
-          <li><Link to='/'><i><FaYoutube /></i> Youtube</Link></li>
+          <li><Link to='https://www.instagram.com/wurthcarhaus'><i><FaInstagram /></i> Instagram</Link></li>
+          <li><Link to='https://www.facebook.com/wurthcarhaus
+'><i><FaFacebookF /></i> Facebook</Link></li>
+          <li><Link to='https://twitter.com/wurthcarhaus'><i><FaTwitter /></i> Twitter</Link></li>
+          <li><Link to='https://www.linkedin.com/company/w%C3%BCrth-carhaus/'><i><FaLinkedinIn /></i> Linkedin</Link></li>
+          {/* <li><Link to='/'><i><FaYoutube /></i> Youtube</Link></li> */}
+
           </ul>
         </div></div>
 
@@ -27,10 +39,10 @@ const Footer = () => {
           <Link to='/about'>About Us</Link>
           <Link to='/services'>Services</Link>
           <Link to='/'>Blogs</Link>
-          <Link to='/'>Book on Appoinment</Link>
-          <Link to='/'>Franchise Enquiry</Link>
+          <Link onClick={() => { setOpenModalBookAnAppointment(true); }}>Book on Appoinment</Link>
+          <Link onClick={() => { setOpenModalFranchiseEnquiry(true); }}>Franchise Enquiry</Link>
           </div>
-
+          
 
         <div className='subNews'>
           <h3 className='sizeH3 red'>Stay updated<br/> with the latest offers,<br/> news and more.</h3>
@@ -68,8 +80,7 @@ const Footer = () => {
 
 <ul>
 <li><h4>INTERIOR</h4></li>
-<li><Link to='/'>Micro B clean plus </Link></li>
-<li><Link to='/'>Micro B Clean</Link></li>
+
 <li><Link to='/'>Micro Classy</Link></li>
 </ul>
 </div>
@@ -86,7 +97,6 @@ const Footer = () => {
 <ul>
 <li><h4>ANTI RUST</h4></li>
 <li><Link to='/'>Underbody Rust Off</Link></li>
-<li><Link to='/'>Underbody Rust Off X-treme</Link></li>
 <li><Link to='/'>Cavity Wax Protection</Link></li>
 <li><Link to='/'>Exhaust Coating</Link></li>
 </ul>
@@ -136,7 +146,7 @@ const Footer = () => {
         <h4>Business Hours: Mon - Fri 10.30 am - 7pm</h4>
             <p>Wuerth India Pvt. Ltd. 703/704, Sahar Windfall, Sahar Plaza Complex, Andheri – Kurla Road, J B Nagar, Andheri (East), Mumbai, Maharashtra – 400059</p>
             
-            <h4 className='fLinkC'><Link to="tel:+912267377600" target='_blank' className='IconFaLink wp'><FaPhoneAlt/> +91 22 6737 7600</Link><span className='line'>|</span><Link to="mailto:info.wuerth@wuerth.in" target='_blank' className='IconFaLink wp'><FaEnvelope/> info.wuerth@wuerth.in</Link></h4>
+            <h4 className='fLinkC'><Link to="tel:+912249444222" target='_blank' className='IconFaLink wp'><FaPhoneAlt/> +91 22 4944 4222</Link><span className='line'>|</span><Link to="mailto:carhaus@wuerth.in" target='_blank' className='IconFaLink wp'><FaEnvelope/> carhaus@wuerth.in</Link></h4>
             
             <h4 className='fLinkC'> <Link to="tel:18001025061" target='_blank' className='IconFaLink wp'>Toll Free Number: 18001025061</Link></h4>
 
@@ -171,7 +181,14 @@ const Footer = () => {
 
 
 
-      <div className='bookanappointment_btm'><Link to='/'>Book an Appointment</Link></div>
+      <div className='bookanappointment_btm'><Link onClick={() => { setOpenModalBookAnAppointment(true); }}>Book an Appointment</Link></div>
+
+
+      {OpenModalBookAnAppointment && <BookAnAppointment closeModal={setOpenModalBookAnAppointment} />}
+      {OpenModalFranchiseEnquiry && <FranchiseEnquiry closeModal={setOpenModalFranchiseEnquiry} />}
+
+      
+
     </> 
   )
 }

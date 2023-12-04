@@ -1,6 +1,8 @@
 import React, {useEffect} from 'react'
 import Header from '../Components/Header'
 import Footer from '../Components/Footer'
+import FranchiseEnquiry from '../Components/Forms/FranchiseEnquiry'
+
 import { Link } from 'react-router-dom';
 import { FaArrowRight, FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from 'react-icons/fa';
 
@@ -20,6 +22,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 const ContactUs = () => {
     
+  
   // SEO Tags
   useEffect(() => {
     document.title = 'Contact Us - WÜRTH CAR-Haus';
@@ -27,6 +30,7 @@ const ContactUs = () => {
     if (metaDescription) {
       metaDescription.setAttribute('content', '');
     }
+
   }, []);
   // SEO Tags End
 
@@ -53,13 +57,17 @@ useEffect(() => {
 // GSPA End
 
 
+  // Form PopUp
+  const [openModalFranchiseEnquiry, setOpenModalFranchiseEnquiry] = React.useState(false);
+
+
   return (
     <>
       <Header/>
 
       <section className='topBanner'>
             <div className='topBannerImg'>
-                <img src={contactUs} />
+                <img src={contactUs} alt="contactUs"/>
             </div>
             <div className='topBannerText'>
                 <div className='container'>
@@ -76,7 +84,6 @@ useEffect(() => {
             </div>
             </div>
         </div>
-
 
 
 
@@ -112,21 +119,30 @@ useEffect(() => {
 of <span className='tu fontBold'>Würth Car<span className='fontBook'>-Haus?</span></span></h4>
           <p>Fill in the form below and we’ll be in touch with you.</p>
           <div className='btnSpaceEx'>
-            <Link to='/' className='btnS2 white fontBold blackB'>Enquire now</Link>
+            <Link  className='btnS2 white fontBold blackB' onClick={() => { setOpenModalFranchiseEnquiry(true); }}>Enquire now</Link>
+
+          
+
           </div>
+
+
+
         </div>
       </div></section>
 
-
+    
 
       <section className='checkoutSvr center' data-aos="fade-up">
         <div className='container'>
             <Link to='/services' className='btnS1 sizeH4 black'><FaArrowRight/> Check out our Services</Link>
         </div>
     </section>
+  
+    {openModalFranchiseEnquiry && <FranchiseEnquiry closeModal={setOpenModalFranchiseEnquiry} />}
 
 
       <Footer/>
+
     </>
   )
 }

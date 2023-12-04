@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+
 import { Link, useLocation  } from 'react-router-dom';
 import WurthLogo from '../Assets/Images/wurth.png';
+import FranchiseEnquiry from './Forms/FranchiseEnquiry'
 
 
 // Icons
@@ -30,6 +32,10 @@ const Header = () => {
   // Get the current location
   const location = useLocation();
 
+  // Form PopUp
+  const [openModalFranchiseEnquiry, setOpenModalFranchiseEnquiry] = React.useState(false);
+
+
 
   return (
     <>
@@ -39,7 +45,7 @@ const Header = () => {
               <div className='topNav_right'>
                 <Link to='/'><FaPhoneAlt/> +91 22 6737 7600</Link>  
                 <span>|</span>
-                <Link to='/'>Franchise Enquiry</Link>
+                <Link onClick={() => { setOpenModalFranchiseEnquiry(true); }}>Franchise Enquiry</Link>
               </div>
               <div className='clearfix'></div>
             </div>
@@ -88,15 +94,16 @@ const Header = () => {
 
 
 
-
             </div>
         </div>
 
 
        </header>
 
-
        <div className="topHeaderspace"></div>
+
+
+       {openModalFranchiseEnquiry && <FranchiseEnquiry closeModal={setOpenModalFranchiseEnquiry} />}
 
 
     </>

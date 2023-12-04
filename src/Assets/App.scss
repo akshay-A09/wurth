@@ -30,6 +30,7 @@ $lightgrey2: #cacacc;
     text-decoration: none;
     box-sizing: border-box;
 }
+.w-100{width: 100%;}
 a, button, .react-tabs .react-tabs__tab-list li{
     cursor: url('../Assets/Images/icon/pointer.png'), auto!important;
 }
@@ -134,9 +135,9 @@ section {
     background: $lightgrey2
 }
 
-.center {
-    text-align: center;
-}
+.center {text-align: center!important;}
+.alignLeft{text-align: left!important;}
+.lignRight{text-align: right!important;}
 
 h1,
 h2,
@@ -461,7 +462,7 @@ header {
         overflow: hidden;
         .topNav_right {
             float: right;
-
+            display: flex;
             a {
                 color: $black;
                 font-size: 14px;
@@ -1024,7 +1025,7 @@ footer {
                 left: 90px;
                 opacity: 0;
                 transition: all 1.5s;
-                transition-delay: 0.7s;
+                transition-delay: 0.4s;
 
                 .itemCover_hd_call {
                     font-size: 7vh;
@@ -1076,25 +1077,25 @@ footer {
 
                         &:nth-child(1) {
                             &::before {
-                                background-position: center top;
+                                background-position: center top -120px;
                             }
                         }
 
                         &:nth-child(2) {
                             &::before {
-                                background-position: center top -55px;
+                                background-position: center top -175px;
                             }
                         }
 
                         &:nth-child(3) {
                             &::before {
-                                background-position: center top -120px;
+                                background-position: center top -55px;
                             }
                         }
 
                         &:nth-child(4) {
                             &::before {
-                                background-position: center top -175px;
+                                background-position: center top;
                             }
                         }
 
@@ -1146,7 +1147,6 @@ footer {
                 left: 0%;
                 right: 0;
                 transition: all 0.5s;
-                transform: scale(0);
                 transition-delay: 0.7s;
                 .bannerMan{
                     width: 19%;
@@ -1154,7 +1154,6 @@ footer {
                     position: absolute;
                     left: 12%;
                     bottom: 0;
-                    transform: scale(0);
                     transition: all 0.5s;
                     transition-delay:0s; 
                 }
@@ -1171,14 +1170,12 @@ footer {
                 width: 80%;
                 top: 33vh;
                 left: 0%;
-                transform: scale(0);
                 .bannerMan{
                     width: 11%;
                     height:auto;
                     position: absolute;
                     left: 54.5%;
                     top: 0;
-                    transform: scale(0);
                     transition: all 0.5s;
                     transition-delay:0s; 
                 }
@@ -1194,14 +1191,12 @@ footer {
                 width: 70%;
                 top: 40vh;
                 left: 5%;
-                transform: scale(0);
                 .bannerMan{
                     width: 22%;
                     height:auto;
                     position: absolute;
                     right: -3%;
                     bottom: 5%;
-                    transform: scale(0);
                     transition: all 0.5s;
                     transition-delay:0s; 
                 }
@@ -1578,6 +1573,12 @@ footer {
 
 }
 
+.chartSlide{
+    td, th {border: 1px solid #dddddd; text-align: center; padding: 20px; text-transform:uppercase}
+    .bg_bl{background-color: #000;color:#fff}
+    table tr td {background:#e30614;color:#fff}
+}
+    
 // Services End
 
 // clickBox
@@ -1790,17 +1791,17 @@ footer {
         ul{
             display: flex;
             text-align: center;
+            gap: 20px;
             li{
                 list-style-type: none;
                 width: 100%;
                 transition: all 0.5s;
-                transform: scale(1);
             }
             &:hover{
                 li{
                     
                     &:hover{
-                        transform: scale(1.1);
+                        
                     }
                 }
             }
@@ -2073,7 +2074,7 @@ footer {
                 top: 0;
                 bottom: 0;
                 border-radius: 100%;
-                transform: scale(1.2);
+                transform: scale(0.9);
                 border: 1px solid $black;
                 transition: all 0.4s;
             }
@@ -2091,7 +2092,7 @@ footer {
                 }
                 &::after{
                     background-color: $red;
-                    transform: scale(1.1);
+                    transform: scale(1.0);
                 }
             }
         }
@@ -2495,6 +2496,104 @@ footer {
 
 
 
+// Site Forms
+.frmS{
+    padding: 30px;
+    width: 100%;
+    .sizeH4{
+        margin-bottom: 30px;
+    }
+    .flexFm{
+        display: flex;
+        gap: 20px;
+    }
+    .form-group{  
+        width: 100%;
+        font-size: 16px;
+
+        ::placeholder{
+            color: $grey;
+            opacity: 1;
+            font-family: $fontBook;
+        }
+         input, textarea {
+            padding: 15px 15px;
+            margin: 10px auto;
+            width: 100%;
+            border: 1px solid #000;
+            border-bottom-color: rgb(0, 0, 0);
+            border-bottom: 4px solid #000;
+            outline: none;
+            &:focus{
+                outline: none;
+                border: 1px solid #e30614;
+                border-bottom-color: rgb(214, 0, 0);
+                border-bottom: 4px solid #e30614
+            }
+        }
+        &.btn09{
+            margin-top: 20px;
+            text-align: right;
+        }
+        &.flexfild{
+            
+        padding: 10px 15px;
+            label{
+                display: flex;
+                font-size: 16px;
+                cursor:  url('../Assets/Images/icon/pointer.png'), auto!important;;
+                span{margin:0;color: $grey;}
+                input{
+                    padding: 10px;
+                    width: 20px;
+                    height: 20px;
+                    margin: auto 10px;
+                    cursor:  url('../Assets/Images/icon/pointer.png'), auto!important;;
+                }
+            }
+        }
+    }
+}
+
+.modalBackground{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgb(7 5 5 / 18%);
+    backdrop-filter: blur(9px);
+    display: flex;
+    transition: all 0.5s;
+   
+    .modalContainer{
+        width: 600px;
+        background: #fff;
+        position: relative;
+        .modalClose{
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 30px;
+            height: 30px;
+            border: none;
+            background: $red;
+            color: #fff;
+            &:hover{
+                background: #000;
+            }
+        }
+    }
+}
+ 
+.modal-open{
+    overflow: hidden;
+}
+// Site Forms end
+
 
 // Mobile Responsiv
 
@@ -2636,4 +2735,96 @@ footer {
 .homeBanner .slick-slider .item .itemCover::after{clip-path: polygon(0 0, 100% 0%, 100% 100%, 50% 100%);}
 .itemList .react-tabs .react-tabs__tab-list{overflow: auto;}
 }
+
+
+
 // Mobile Responsiv
+
+
+// Services Form
+.frm-services .form-group {
+    width: 50%;
+    float: left;
+    margin: 0px 0px;
+    padding: 0px 20px 0px 0;
+}
+
+.frm-services .form-group.btn09{
+padding: 0 0;
+width:100%;
+text-align: center;
+}
+.frm-services .form-group input, .frm-services .form-group textarea{
+    height: 64px;
+
+}
+
+.productsRow .productsCol .productsColClick .productsColBg:hover {
+    border-bottom: 1px solid red;
+
+}
+
+.productsRow .productsCol .productsColClick:hover{
+    border:1px solid red;
+
+}
+@media only screen and (max-width: 767px) {
+    .frm-services .form-group {
+        width: 100%;
+        float: none;
+    }
+    
+.productsRow {grid-template-columns: repeat(1, 1fr);}
+
+.box-area{display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    gap: 50px;}
+}
+
+
+
+// Services Form
+
+
+.cera-box{
+    margin:0;
+    display:flex;
+    font-weight:700;
+
+p{
+    display: flex;
+    margin: 0;
+    border: 1px solid red;
+    width: 300px;
+    border-top-left-radius: 60px;
+    border-bottom-left-radius: 60px;
+    border-right: none;
+    align-items: center;
+    padding: 0px 30px;
+
+b{margin:0;}
+h4{margin:0;padding:0px 10px;font-size:22px;}
+}
+span{
+    margin: -15px;
+    border: 1px solid red;
+    border-radius: 60%;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight:700;
+    font-size:24px;
+}
+}
+.box-area{
+    display:flex;
+    justify-content:space-evenly;
+    margin:30px 0px 0px;
+}
+
+.padding30{
+    padding:30px 0px 30px 0px;
+}

@@ -22,30 +22,27 @@ import 'react-tabs/style/react-tabs.css';
 import services from '../Assets/Images/topBanners/services.jpg'
 
 // Services
-import PaintProtectionFilm from '../Assets/Images/services/images/PaintProtectionFilm.jpg';
-import EngineCoat from '../Assets/Images/services/images/EngineCoat.jpg';
 import AlloyWheelPolish from '../Assets/Images/services/images/AlloyWheelPolish.jpg';
-import RodentRepellent from '../Assets/Images/services/images/RodentRepellent.jpg';
 import ServicePlus from '../Assets/Images/services/images/ServicePlus.jpg';
 import EmblemCleaning from '../Assets/Images/services/images/EmblemCleaning.jpg';
 import Acoustics4DSD from '../Assets/Images/services/images/Acoustics4DSD.jpg';
 import CavityWaxProtection from '../Assets/Images/services/images/CavityWaxProtection.jpg';
-import SilencerCoating from '../Assets/Images/services/images/SilencerCoating.jpg';
-import carACEvaporator from '../Assets/Images/services/images/carACEvaporator.jpg';
 import ACVentCleaning from '../Assets/Images/services/images/ACVentCleaning.jpg';
-import WindshieldGlassPolish from '../Assets/Images/services/images/WindshieldGlassPolish.jpg';
-import HeadLightRestoration from '../Assets/Images/services/images/HeadLightRestoration.jpg';
-import UnderbodyRustOff from '../Assets/Images/services/images/UnderbodyRustOff.jpg';
-import WurthCeraMaxx from '../Assets/Images/services/images/WurthCeraMaxx.jpg';
-import WurthGlossSeal from '../Assets/Images/services/images/WurthGlossSeal.jpg';
 import PaintRevive from '../Assets/Images/services/images/PaintRevive.jpg';
-import ExteriorEnrich from '../Assets/Images/services/images/ExteriorEnrich.jpg';
 import uvShield2 from '../Assets/Images/services/images/uvShield.jpg';
 import BlueGreenWash from '../Assets/Images/services/images/BlueGreenWash.jpg';
-import InterioClassy from '../Assets/Images/services/images/Interio-Classy.jpg';
-
-
-
+import CeraMaxx from '../Assets/Images/services/new/CeraMaxx.jpg';
+import EngineCoat from '../Assets/Images/services/new/EngineCoat.jpg';
+import ExaustCoating from '../Assets/Images/services/new/ExaustCoating.jpg';
+import ExteriorEnrich from '../Assets/Images/services/new/ExteriorEnrich.jpg';
+import GlossSeal from '../Assets/Images/services/new/GlossSeal.jpg';
+import HighlightRestoration from '../Assets/Images/services/new/HighlightRestoration.jpg';
+import MicroBCleanPlus from '../Assets/Images/services/new/MicroBCleanPlus.jpg';
+import PPF from '../Assets/Images/services/new/PPF.jpg';
+import RodentRepellent from '../Assets/Images/services/new/RodentRepellent.jpg';
+import WindshieldPolish from '../Assets/Images/services/new/WindshieldPolish.jpg';
+import GreenWash from '../Assets/Images/services/new/GreenWash.jpg';
+import UnderbodyRustOff from '../Assets/Images/services/new/UnderbodyRustOff.jpg';
 // Services
 
 // Images End
@@ -73,37 +70,37 @@ const Services = () => {
   // Data for the services 
   const tabExterior = [
     {
-      link: '/',
-      image: WurthCeraMaxx,
-      title: 'WÜRTH Cera-Maxx',
+      link: '/services/exterior/wurth-cra-maxx',
+      image: CeraMaxx,
+      title: 'WÜRTH Cera Maxx',
     },
    
     {
-      link: '/services/wurth-paint-protection-film',
-      image: PaintProtectionFilm,
+      link: '/services/exterior/wurth-paint-protection-film',
+      image: PPF,
       title: 'WÜRTH Paint Protection Film',
     },
   
     {
-      link: '/',
-      image: WurthGlossSeal,
+      link: '/services/exterior/wurth-gloss-seal',
+      image: GlossSeal,
       title: 'WÜRTH Gloss Seal',
     },
     
     {
-      link: '/',
+      link: '/services/exterior/exterior-enrich',
       image: ExteriorEnrich,
       title: 'Exterior Enrich',
     },
   
     {
-      link: '/',
+      link: '/services/exterior/paint-revive',
       image: PaintRevive,
       title: 'Paint Revive',
     },
    
     {
-      link: '/',
+      link: '/services/exterior/uv-shield',
       image: uvShield2,
       title: 'UV Shield',
     },
@@ -112,35 +109,24 @@ const Services = () => {
   
   const tabInterior = [
     {
-      link: '/services/wurth-paint-protection-film',
-      image: PaintProtectionFilm,
-      title: 'Micro B clean plus',
-    },
-  
-    {
-      link: '/services/wurth-paint-protection-film',
-      image: PaintProtectionFilm,
-      title: 'Micro B Clean',
-    },
-  
-    {
-      link: '/services/wurth-paint-protection-film',
-      image: PaintProtectionFilm,
+      link: '/services/interior/micro-classy',
+      image: MicroBCleanPlus,
       title: 'Micro Classy',
     },
+  
   
   ];
   
   const tabCarWash = [
     {
-      link: '/services/wurth-paint-protection-film',
+      link: '/services/car-wash/blue-wash',
       image: BlueGreenWash,
       title: 'Blue Wash',
     },
   
     {
-      link: '/services/wurth-paint-protection-film',
-      image: PaintProtectionFilm,
+      link: '/services/car-wash/green-wash',
+      image: GreenWash,
       title: 'Green Wash',
     },
   
@@ -148,26 +134,20 @@ const Services = () => {
   
   const tabAntiRust = [
     {
-      link: '/services/wurth-paint-protection-film',
+      link: '/services/anti-rust/underbody-rust-off',
       image: UnderbodyRustOff,
       title: 'Underbody Rust Off',
     },
   
     {
-      link: '/services/wurth-paint-protection-film',
-      image: UnderbodyRustOff,
-      title: 'Underbody Rust Off X-treme',
-    },
-  
-    {
-      link: '/services/wurth-paint-protection-film',
+      link: '/services/anti-rust/cavity-wax-protection',
       image: CavityWaxProtection,
       title: 'Cavity Wax Protection',
     },
   
     {
-      link: '/services/wurth-paint-protection-film',
-      image: PaintProtectionFilm,
+      link: '/services/anti-rust/exhaust-coating',
+      image: ExaustCoating,
       title: 'Exhaust Coating',
     },
   
@@ -175,7 +155,7 @@ const Services = () => {
   
   const tabACservices = [
     {
-      link: '/services/wurth-paint-protection-film',
+      link: '/services/ac-services/ac-vent-cleaning',
       image: ACVentCleaning,
       title: 'A/C Vent Cleaning',
     },
@@ -184,49 +164,49 @@ const Services = () => {
   
   const tabOtherApplications = [
     {
-      link: '/services/wurth-paint-protection-film',
-      image: HeadLightRestoration,
+      link: '/services/other-applications/headlight-restoration',
+      image: HighlightRestoration,
       title: 'Headlight Restoration',
     },
   
     {
-      link: '/services/wurth-paint-protection-film',
-      image: WindshieldGlassPolish,
+      link: '/services/other-applications/windshield-polish',
+      image: WindshieldPolish,
       title: 'Windshield Polish',
     },
   
     {
-      link: '/services/wurth-paint-protection-film',
+      link: '/services/other-applications/emblem-cleaning',
       image: EmblemCleaning,
       title: 'Emblem Cleaning',
     },
   
     {
-      link: '/services/wurth-paint-protection-film',
+      link: '/services/other-applications/service-plus',
       image: ServicePlus,
       title: 'Service Plus',
     },
   
     {
-      link: '/services/wurth-paint-protection-film',
+      link: '/services/other-applications/acoustics-4-dsd',
       image: Acoustics4DSD,
       title: 'Acoustics-4 DSD',
     },
   
     {
-      link: '/services/wurth-paint-protection-film',
+      link: '/services/other-applications/alloy-wheel-polish',
       image: AlloyWheelPolish ,
       title: 'Alloy Wheel Polish',
     },
   
     {
-      link: '/services/wurth-paint-protection-film',
+      link: '/services/other-applications/engine-coat',
       image: EngineCoat,
       title: 'Engine Coat',
     },
   
     {
-      link: '/services/wurth-paint-protection-film',
+      link: '/services/other-applications/rodent-repellent',
       image: RodentRepellent,
       title: 'Rodent Repellent',
     },
@@ -234,7 +214,6 @@ const Services = () => {
   ];
   
   // Data for the services  End
-
 
   // Customers Reviews Slider
   const customersReviewsAboutSlider = {
@@ -282,11 +261,7 @@ const Services = () => {
 
 
   ];
-
-    // Customers Reviews End
-
-
-
+// Customers Reviews End
 
   return (
     <>
@@ -294,7 +269,7 @@ const Services = () => {
 
           <section className='topBanner'>
             <div className='topBannerImg'>
-                <img src={services} />
+                <img src={services} alt="services" />
             </div>
             <div className='topBannerText'>
                 <div className='container'>
@@ -326,8 +301,6 @@ const Services = () => {
             </div>
         </div>
       </section> 
-
-
 
   <section className='itemList pT'>
       <div className='container'>
@@ -516,12 +489,7 @@ const Services = () => {
 
         </div>
       </section>
-
-
-
-
-
-          <Footer/>
+  <Footer/>
     </>
   )
 }
